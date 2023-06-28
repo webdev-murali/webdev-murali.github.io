@@ -1,0 +1,73 @@
+@media print{
+    #userDetails,header,.main-con,title,.resume-viewer,.feedback-con,footer,#download-btns ,time{
+        display: none !important;
+    }
+
+    .firstName{
+        color:black;
+        font-weight: bold;
+    }
+    .profession{
+        color:darkgrey;
+        font-weight: bold;
+    }
+    .resume-Subheading{
+        text-decoration: underline;
+        text-decoration-color: darkgray;
+        text-decoration-style: solid;
+        font-weight: bold;
+    }
+    #resumeSection .addressCard .iconBtn .btn{
+        border-radius: 43px;
+        background: #fff;
+    }
+    #resumeSection .addressCard {
+        background-color: gainsboro !important;
+    }
+    #resumeSection .addressCard .card-body .d-flex {
+        gap:8px;
+    }
+    #resumeSection .addressCard .card-body {
+        padding: .5rem !important;
+    }
+    #resumeSection .addressCard{
+        border:none !important;
+    }
+}
+
+.addressCard{
+    background-color: gainsboro;
+}
+.border_g{
+    border: 2px solid darkgray;
+}
+.firstName{
+    color:black;
+    font-weight: bold;
+}
+.profession{
+    color:darkgrey;
+    font-weight: bold;
+}
+.resume-Subheading{
+    text-decoration: underline;
+    text-decoration-color: darkgray;
+    text-decoration-style: solid;
+    font-weight: bold;
+}
+#resumeSection .addressCard .iconBtn .btn{
+    border-radius: 43px;
+    background: #fff;
+}
+#resumeSection .addressCard {
+    background: gainsboro;
+}
+#resumeSection .addressCard .card-body .d-flex {
+    gap:8px;
+}
+#resumeSection .addressCard .card-body {
+padding: .5rem !important;
+}
+#resumeSection .addressCard{
+    border:none !important;
+}
