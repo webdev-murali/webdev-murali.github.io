@@ -7,24 +7,38 @@
     <title>Create Your Resume | for free</title>
     <!--Bootstrap V5-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!--Angular js-->
+    <!--Angular JS-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <!--Externall JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-
-    <script src="js/main.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/FileSaver.js"></script>
-
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!--Search-->
+    <script async src="https://cse.google.com/cse.js?cx=d1420aa2c45e74c14"></script>
+    <!--External JS-->
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/templates.js"></script>
     <!--Fontawesome 5 CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!--Externall CSS-->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/templates.css">
-    <link rel="stylesheet" href="css/resumeBuilder.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/templates.css">
+    <link rel="stylesheet" href="assets/css/resumeBuilder.css">
     <!--Internall CSS-->
     <style>
-
+      #gs_tti50 input
+      {
+        background: none !important;
+      }
+      .gsc-search-button-v2{
+        background-color: #00887a !important;
+        
+      }
+ 
+      .table.gsc-search-box td.gsc-input{padding-right: 0 !important;}
+      #gs_id50 tbody tr{border: 2px solid gainsboro;}
+      #gs_tti50 input:focus{box-shadow: none !important;color:black !important}
     </style>  
 </head>
 <body ng-app="resumeApp" ng-controller="templateCtrl">
@@ -38,10 +52,10 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html" target="_blank">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="mychatgpt.html">My ChatGPT</a>
+                        <a class="nav-link" href="mychatgpt.html" target="_blank">My ChatGPT</a>
                     </li>
                 </ul>
             </div>
@@ -56,11 +70,271 @@
         </div>
     </div>
 
+    <!-- <div class="mx-5">H>></div> -->
+    <!--Step1 Enter Details-->
+    <section id="userDetails">
+        <div class="container-fluid mt-5 d-flex flex-row px-5">
+            <div class="row" >
+                <div class=""style="width:fit-content !important;">
+                    <h2 class="mb-3">Personal details:</h2>
+                    <form role="form" method="POST" name="resumeForm">
+                    <div class="row">
+                        <div class="col-lg-3" >
+                            <label for="text" class="form-label">FirstName</label>
+                            <input type="text" class="form-control" ng-model="yourResumeData.personalInfo.firstName" maxlength="20" required placeholder="ex:Murali">
+                        </div>
+                        <div class="col-lg-3" >
+                            <label for="text" class="form-label"> LastName</label>
+                            <input type="text" class="form-control" ng-model="yourResumeData.personalInfo.lastName" maxlength="15" placeholder="ex:Raj">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-5">
+                        <div class="col-lg-2" >
+                            <label for="text" class="form-label">State</label>
+                            <input type="text" class="form-control" ng-model="yourResumeData.personalInfo.state" placeholder="ex:Tamil Nadu">
+                        </div>
+                        <div class="col-lg-2" >
+                            <label for="text" class="form-label">City</label>
+                            <input type="text" class="form-control" ng-model="yourResumeData.personalInfo.city" placeholder="ex:Trichy">
+                        </div>
+                        <div class="col-lg-2" >
+                            <label for="text" class="form-label">Pincode</label>
+                            <input type="text" class="form-control" ng-model="yourResumeData.personalInfo.pincode" placeholder="ex:621001">
+                        </div>
+                    </div>
+        
+                    <div class="row mt-5">
+                        <div class="col-lg-2">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="text" class="form-control" ng-model="yourResumeData.personalInfo.phoneNumber" maxlength="20" placeholder="ex:0987654321">
+                        </div>
+                        <div class="col-lg-4">
+                            <label for="email"class="form-label">Email Id</label>
+                            <input type="email" class="form-control" ng-model="yourResumeData.personalInfo.emailId" maxlength="40" placeholder="ex:youremailid@gmail.com">
+                        </div>
+                    </div>
+        
+                    <div class="row mt-5">
+                        <div class="col-lg-4">
+                            <label for="careerObjective" class="form-label">Career Objective</label>
+                            <textarea name="" id="careerObjective" cols="3" rows="4" ng-model="yourResumeData.careerObjective" class="form-control"></textarea>
+                        </div>
+                    </div>
+        
+                    <!-- <div class="row mt-5">
+                        <div class="col-lg-3">
+                            <label for="profile_pic" class="form-label">Upload your profile photo</label>
+                            <input type="file" id="profile_pic" ng-click="fileChanged($event)" ng-init="profileImg = event.target.files[0]" ng-model="yourResumeData.personalInfo.profilePic"  class="form-control" accept="image/*">
+                            {{profileImg}}
+                        </div>
+                        <div class="col-lg-3" >
+                            <img src="{{profileImg}}" title="Preview your photo" class="img-fluid profilepic">
+                             
+                        </div> 
+                    </div> -->
+        
+                    <div class="row mt-5">
+                        <h2 class="mb-3">Education:</h2>
+                        <div class="row">
+                            <div class="col-lg-4" >
+                                <label for="text" class="form-label">College</label>
+                                <input type="text" class="form-control" ng-model="yourResumeData.education.collegeName" maxlength="40"  placeholder="ex:Bishop Heber College">
+                            </div>
+                            <div class="col-lg-3" >
+                                <label for="text" class="form-label">Location</label>
+                                <input type="text" class="form-control" ng-model="yourResumeData.education.collegeLocation" maxlength="40" placeholder="ex:Trichy">
+                            </div>
+                        </div>
+                        
+                        <div class="row mt-5">
+                            <div class="col-lg-3">
+                                <label for="Degree" class="form-label">Degree</label>
+                                <input type="text" class="form-control" ng-model="yourResumeData.education.degree" placeholder="ex:Bachelor of Computer Application">
+                            </div>
+                            <div class="col-lg-2" >
+                                <label for="text" class="form-label">Start&nbsp;Year</label>
+                                <input type="text" class="form-control" maxlength="4" ng-model="yourResumeData.education.graduationSt" placeholder="ex:2018">
+                            </div>
+                            <div class="col-lg-2" >
+                                <label for="text" class="form-label">End&nbsp;Year</label>
+                                <input type="text" class="form-control" maxlength="4" ng-model="yourResumeData.education.graduationEnd" placeholder="ex:2021">
+                            </div>
+                        </div>
+                    </div>
+         
+                    <!--Work Experience-01-->
+                    <div class="row mt-5" ng-show="true">
+                        <h2 class="mb-3">Work Experience</h2>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label for="" class="form-label">Job Title</label>
+                                <input type="text" class="form-control" ng-model="yourResumeData.workExperience[0].jobTitle" placeholder="ex:Web desinger">
+                            </div>
+                            <div class="col-lg-4">
+                                <label for="company" class="form-label">Company Name</label>
+                                <input type="text" class="form-control" ng-model="yourResumeData.workExperience[0].companyName" placeholder="ex:Zoho">
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-lg-2">
+                                <label for="" class="form-label">Country</label>
+                                <input type="text" class="form-control" ng-model="yourResumeData.workExperience[0].workCountry" placeholder="ex:India">
+                            </div>
+                            <div class="col-lg-2">
+                                <label for="" class="form-label">State</label>
+                                <input type="text" class="form-control" ng-model="yourResumeData.workExperience[0].workState" placeholder="ex:Tamil Nadu">
+                            </div>
+                            <div class="col-lg-3">
+                                <label for="" class="form-label">City</label>
+                                <input type="text" class="form-control" ng-model="yourResumeData.workExperience[0].workCity" placeholder="ex:Chennai">
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-lg-2" >
+                                <label for="text" class="form-label">Start&nbsp;Date</label>
+                                <input type="text" class="form-control" maxlength="11" ng-model="yourResumeData.workExperience[0].workStart" placeholder="ex:01-05-2019">
+                            </div>
+                            <div class="col-lg-2" >
+                                <label for="text" class="form-label">End&nbsp;Date</label>
+                                <input type="text" class="form-control" maxlength="11" ng-model="yourResumeData.workExperience[0].workEnd" placeholder="ex:01-05-2022">
+        
+                                <!-- <div class="form-check form-check-inline mt-2">
+                                    <input type="checkbox" class="form-check-input" ng-model="currentlyWorkHere">
+                                    <label for="" class="form-check-label">I&nbsp;currently&nbsp;work&nbsp;here</label>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="form-check form-check-inline mt-2">
+                            <input type="checkbox" class="form-check-input" ng-model="moreWorkEx1">
+                            <label for="" class="form-check-label">Add more Working Experience</label>
+                        </div>
+                    </div>
+        
+                    <!--Work Experience-2-->
+                    <div class="row mt-5" ng-show="moreWorkEx1">
+                        <h2 class="mb-3">Work Experience-2</h2>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label for="" class="form-label">Job Title</label>
+                                <input type="text" class="form-control" ng-model="yourResumeData.workExperience[1].jobTitle" placeholder="ex:Web desinger">
+                            </div>
+                            <div class="col-lg-4">
+                                <label for="company" class="form-label">Company Name</label>
+                                <input type="text" class="form-control" ng-model="yourResumeData.workExperience[1].companyName" placeholder="ex:Zoho">
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-lg-2">
+                                <label for="" class="form-label">Country</label>
+                                <input type="text" class="form-control" ng-model="yourResumeData.workExperience[1].workCountry" placeholder="ex:India">
+                            </div>
+                            <div class="col-lg-2">
+                                <label for="" class="form-label">State</label>
+                                <input type="text" class="form-control" ng-model="yourResumeData.workExperience[1].workState" placeholder="ex:Tamil Nadu">
+                            </div>
+                            <div class="col-lg-3">
+                                <label for="" class="form-label">City</label>
+                                <input type="text" class="form-control" ng-model="yourResumeData.workExperience[1].workCity" placeholder="ex:Chennai">
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-lg-2" >
+                                <label for="text" class="form-label">Start Date</label>
+                                <input type="text" class="form-control" maxlength="11" ng-model="yourResumeData.workExperience[1].workStart" >
+                            </div>
+                            <div class="col-lg-2" >
+                                <label for="text" class="form-label">End Date</label>
+                                <input type="text" class="form-control" maxlength="11" ng-model="yourResumeData.workExperience[1].workEnd" >
+        
+                                <!-- <div class="form-check form-check-inline mt-2">
+                                    <input type="checkbox" class="form-check-input" ng-model="currentlyWorkHere">
+                                    <label for="" class="form-check-label">I&nbsp;currently&nbsp;work&nbsp;here</label>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="form-check form-check-inline mt-2">
+                            <input type="checkbox" class="form-check-input" ng-model="moreWorkEx3">
+                            <label for="" class="form-check-label">Add more Working Experience</label>
+                        </div>
+                    </div>
+                    <!--Skills-->
+                    <div class="row mt-5">
+                        <h2 class="mb-3">Your Skills</h2>
+                        <div class="row">
+                            <div class="col-lg-5 d-inline">
+                                <label for="skills" class="form-label">Enter Your Skills</label>
+                                <textarea type="text" class="form-control"
+                                 ng-model="yourResumeData.skills[0]" placeholder="HTML,CSS,JS" required>
+                                </textarea>                  
+                                <!-- <button class="btn btn-success mt-1" ng-click="addSkills();">Add Skills</button> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!--Certifications-->
+                    <div class="row mt-5">
+                        <h2 class="mb-3">Your Certifications</h2>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <label for="" class="form-label">Certification Name</label>
+                                <input type="text" class="form-control" ng-model="yourResumeData.certification.certificationName" placeholder="English Junior Typeist">
+                            </div>
+                            <div class="col-lg-3">
+                                <label for="" class="form-label">About certification</label>
+                                <textarea class="form-control" rows="2" cols="3" ng-model="yourResumeData.certification.certificationAbout" placeholder="FirstClass"></textarea>
+                            </div>
+        
+                        </div>
+                    </div>
+                    <!--Projects-->
+                    <!-- <div class="row mt-5">
+                        <h2 class="mb-3">Your Projects</h2>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label for="" class="form-label">Enter Project Name</label>
+                                <input type="text" class="form-control" ng-model="projectName" placeholder="English Junior Typeist">
+                            </div>
+                            <div class="col-lg-3">
+                                <label for="" class="form-label">About Project</label>
+                                <textarea name="" id="" cols="2" rows="3" class="form-control" ng-model="projectAbout" placeholder="About your Project..."></textarea>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="row mt-5">
+                        <div class="col-lg-4">
+                            <input type="submit" class="btn btn-success btn-lg" value="Save details"  ng-click="saveResumeData(yourResumeData)">
+                            
+                        </div>
+                        <div class="col-lg-4">
+                            <input type="reset" class="btn btn-danger btn-lg " value="Reset details" ng-click="resetData()">
+                        </div>
+                    </div>
+                    </form> 
+                </div>
+            </div>
+            <!--Help row-->
+            <div class="" id="help-col" >
+                <div class="row " style="width:20rem;">
+                    <div class="">
+                        <h2>Google Search</h2>
+                        <div class="">
+                            <div class="gcse-search"></div>
+                        </div>
+                       
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <hr>
+    </section>
+    
+    <!--Step2 Select Resume Template-->
     <!-- <section id="templates-sec">
         <div class="container mt-5">
-            <h3 class="">Choose your Resume Template</h3>
-                
-            <div class="row mt-5">
+            <h2 class="text-center col-12 text-success font-weight-bold h1">Choose your Resume Template</h2>
+            <div class="row mt-4">
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="card-body">
@@ -84,376 +358,165 @@
                 </div>
             </div><hr>
         </div>
-        
     </section> -->
+
+    <h2 class="text-center col-12 text-success font-weight-bold h1 mt-5">Preview Your Resume</h2>
+    <!--Download & Preview Resume-->
     
-    <section id="userDetails">
-        <div class="container mt-5" >
-            <h2 class="mb-3">1) Personal details:</h2>
-            <div class="row">
-                <div class="col-lg-3" >
-                    <label for="text" class="form-label">Enter Your FirstName</label>
-                    <input type="text" class="form-control" ng-model="firstName" maxlength="20" required placeholder="ex:Murali">
-                    
+    <section class="mt-4 template1" id="resumeSection">
+        <div class="container border_g" >
+            <div class="row mt-4 ml-4" ng-show="yourResumeData.personalInfo">
+                <div class="row align-items-center">
+                    <div class="col-lg-10">
+                        <h1 class="firstName">{{yourResumeData.personalInfo.firstName}}  {{yourResumeData.personalInfo.lastName}}</h1>
+                        <!-- <h4 class="profession">{{yourResumeData.personalInfo.profession}}</h4> -->
+                    </div>
+                    <!-- <div class="col-lg-2">
+                        <img src="{{imageUrl}}" ng-show="yourResumeData.personalInfo.profilePic" class="profilepic">
+                    </div> -->
                 </div>
-                <div class="col-lg-3" >
-                    <label for="text" class="form-label">Enter Your LastName</label>
-                    <input type="text" class="form-control" ng-model="lastName" maxlength="15" placeholder="ex:Raj">
-                    
-                </div>
-                <div class="col-lg-3" >
-                    <label for="text" class="form-label">Enter Your Profession</label>
-                    <input type="text" class="form-control" ng-model="profession" placeholder="ex:Software Engineer">
-                    
-                </div>
-            </div>
-            
-            <div class="row mt-5">
-                <div class="col-lg-2" >
-                    <label for="text" class="form-label">Enter Your City</label>
-                    <input type="text" class="form-control" ng-model="city" placeholder="ex:Trichy">
-                    
-                </div>
-                <div class="col-lg-2" >
-                    <label for="text" class="form-label">Enter Your Country</label>
-                    <input type="text" class="form-control" ng-model="country" placeholder="ex:India">
-                    
-                </div>
-                <div class="col-lg-2" >
-                    <label for="text" class="form-label">Enter Pincode</label>
-                    <input type="text" class="form-control" ng-model="pincode" placeholder="ex:621001">
-                    
-                </div>
-            </div>
 
-            <div class="row mt-5">
-                <div class="col-lg-2">
-                    <label for="phone">Enter Phone Number</label>
-                    <input type="text" class="form-control" ng-model="phoneNumber" maxlength="20" placeholder="ex:0987654321">
-                </div>
-                <div class="col-lg-3">
-                    <label for="email">Enter Email Id</label>
-                    <input type="email" class="form-control" ng-model="emailId" maxlength="40" placeholder="ex:youremailid@gmail.com">
-                </div>
-            </div>
-
-            <div class="row mt-5">
-                <div class="col-lg-4">
-                    <label for="career">Career Objective</label>
-                    <textarea name="" id="" cols="3" rows="2" ng-model="careerObjective" class="form-control"></textarea>
-                </div>
-            </div>
-
-            <div class="row mt-5">
-                <h2 class="mb-3">2) Education:</h2>
-                
-                <form action="">
-                    <div class="row">
-                        <div class="col-lg-4" >
-                            <label for="text" class="form-label">College</label>
-                            <input type="text" class="form-control" ng-model="collegeName" maxlength="40"  placeholder="ex:Bishop Heber College">
+                <div class="row  flex-row">
+                    <div class="d-flex justify-content-start align-items-center personalInfo-row2">
+                        <div class="card addressCard">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="iconBtn">
+                                        <button class="btn btn-sm"><i class="fas fa-phone-square-alt"></i></button>
+                                    </div>
+                                    <div class="addressTxt">{{yourResumeData.personalInfo.phoneNumber}}</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-lg-3" >
-                            <label for="text" class="form-label">Location</label>
-                            <input type="text" class="form-control" ng-model="collegeLocation" maxlength="40" placeholder="ex:Trichy">
+
+                        <div class="card addressCard">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="iconBtn">
+                                        <button class="btn btn-sm"><i class="fas fa-envelope"></i></button>
+                                    </div>
+                                    <div class="addressTxt">{{yourResumeData.personalInfo.emailId}}</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-lg-4">
-                            <label for="Degree" class="form-label">Degree</label>
-                            <input type="text" class="form-control" ng-model="degree" placeholder="ex:Bachelor of Computer Application">
+
+                        <div class="card addressCard">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="iconBtn">
+                                        <button class="btn btn-sm"><i class="fas fa-map-marker-alt"></i></button>
+                                    </div>
+                                    <div class="addressTxt">{{yourResumeData.personalInfo.state}},{{yourResumeData.personalInfo.city}}-{{yourResumeData.personalInfo.pincode}}</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+ 
+                </div>
+            </div>
+
+            <div class="row mt-4" ng-show="yourResumeData.careerObjective">
+                <h5 class="resume-Subheading">CAREER OBJECTIVE</h5>
+                <div class="col">
+                    <p class="careerObjTxt">{{yourResumeData.careerObjective}}</p>
+                </div>
+            </div>
+
+            <div class="row mt-3" ng-show="yourResumeData.workExperience[0]">
+                <h5 class="resume-Subheading">EXPERIENCE</h5>
+                <div class="d-flex">
+                    <p><span>*</span>{{yourResumeData.workExperience[0].jobTitle}}&nbsp;</p>
+                    <p>{{yourResumeData.workExperience[0].workCity}},</p>
+                    <p>{{yourResumeData.workExperience[0].workState}}</p>
+                </div>
+                <div class="d-flex">
+                    <p>&nbsp;{{yourResumeData.workExperience[0].companyName}}&nbsp;&nbsp;</p>
+                    <p>{{yourResumeData.workExperience[0].workStart}}-</p>
+                    <p>{{yourResumeData.workExperience[0].workEnd}}</p>
+                </div>
+
+                <div class="d-flex">
+                    <p><span>*</span>{{yourResumeData.workExperience[1].jobTitle}}&nbsp;</p>
+                    <p>{{yourResumeData.workExperience[1].workCity}},</p>
+                    <p>{{yourResumeData.workExperience[1].workState}}</p>
+                </div>
+                <div class="d-flex">
+                    <p>&nbsp;{{yourResumeData.workExperience[1].companyName}}&nbsp;</p>
+                    <p>{{yourResumeData.workExperience[1].workStart}}-</p>
+                    <p>{{yourResumeData.workExperience[1].workEnd}}</p>
+                </div>
+            </div>
+
+            <div class="row mt-3" ng-show="yourResumeData.education">
+                <h5 class="resume-Subheading">EDUCATION</h5>
+                <div class="d-flex">
+                    <p>{{yourResumeData.education.degree}}-</p>
+                    <p>{{yourResumeData.education.collegeLocation}},</p>
                     
-                    <div class="row mt-5">
-                        <div class="col-lg-2" >
-                            <label for="text" class="form-label">Graduation Start Year</label>
-                            <input type="text" class="form-control" maxlength="4" ng-model="graduationSt" placeholder="ex:2018">
-                            
-                        </div>
-                        <div class="col-lg-2" >
-                            <label for="text" class="form-label">Graduation End year</label>
-                            <input type="text" class="form-control" maxlength="4" ng-model="graduationEnd" placeholder="ex:2021">
-                        </div>
-                    </div>
-                </form>
-                
-            </div><hr>
-            <div class="row mt-5">
-                <div class="col-lg-5">
-                    <h5>Are you Fresher or Experience?</h5>
-                    <div class="form-check form-check-inline">
-                        <label for="" class="form-check-label">Fresher</label>
-                        <input type="radio" class="form-check-input" ng-model="workEx" name="workEx" value="false">
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <label for="" class="form-check-label">Experience</label>
-                        <input type="radio" class="form-check-input" ng-model="workEx2" name="workEx" value="true">
-                    </div>
+                </div>
+                <div class="d-flex">
+                    <p>{{yourResumeData.education.collegeName}}&nbsp;</p>
+                    <p>{{yourResumeData.education.graduationSt}}-</p>
+                    <p>{{yourResumeData.education.graduationEnd}}</p>
+                </div>
+            </div>
+
+            <div class="row mt-3" ng-show="yourResumeData.skills">
+                <h5 class="resume-Subheading">Skills</h5>
+                <!--Skills Cards-->
+                <div class="d-flex flex-column">
+                    <ul class="skills-ul">
+                        <li ng-repeat="s in yourResumeData.skills">{{s}}</li>
+                    </ul>
                 </div>
 
             </div>
-            <!--Work Experience-01-->
-            <div class="row mt-5" ng-show="workEx2">
-                <h2 class="mb-3">3) Work Experience</h2>
-                <div class="row">
-                    <div class="col-lg-5">
-                        <label for="" class="form-label">Job Title</label>
-                        <input type="text" class="form-control" ng-model="jobTitle" placeholder="ex:Web desinger">
-                    </div>
-                    <div class="col-lg-4">
-                        <label for="company" class="form-label">Company Name</label>
-                        <input type="text" class="form-control" ng-model="companyName" placeholder="ex:Zoho">
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-lg-3">
-                        <label for="" class="form-label">Country</label>
-                        <input type="text" class="form-control" ng-model="workcountry" placeholder="ex:India">
-                    </div>
-                    <div class="col-lg-3">
-                        <label for="" class="form-label">State</label>
-                        <input type="text" class="form-control" ng-model="workstate" placeholder="ex:Tamil Nadu">
-                    </div>
-                    <div class="col-lg-3">
-                        <label for="" class="form-label">City</label>
-                        <input type="text" class="form-control" ng-model="workCity" placeholder="ex:Chennai">
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-lg-2" >
-                        <label for="text" class="form-label">Work Start Date</label>
-                        <input type="text" class="form-control" maxlength="11" ng-model="work1St" placeholder="ex:01-05-2019">
-                    </div>
-                    <div class="col-lg-2" >
-                        <label for="text" class="form-label">Work End Date</label>
-                        <input type="text" class="form-control" maxlength="11" ng-model="work1End" placeholder="ex:01-05-2022">
 
-                        <!-- <div class="form-check form-check-inline mt-2">
-                            <input type="checkbox" class="form-check-input" ng-model="currentlyWorkHere">
-                            <label for="" class="form-check-label">I&nbsp;currently&nbsp;work&nbsp;here</label>
-                        </div> -->
-                    </div>
-                </div>
-                <div class="form-check form-check-inline mt-2">
-                    <input type="checkbox" class="form-check-input" ng-model="moreWorkEx1">
-                    <label for="" class="form-check-label">Add more Working Experience</label>
-                </div>
-            </div>
-            <!--Work Experience-2-->
-            <div class="row mt-5" ng-show="moreWorkEx1">
-                <h2 class="mb-3">Work Experience-2</h2>
-                <div class="row">
-                    <div class="col-lg-5">
-                        <label for="" class="form-label">Job Title</label>
-                        <input type="text" class="form-control" ng-model="jobTitle2" placeholder="ex:Web desinger">
-                    </div>
-                    <div class="col-lg-4">
-                        <label for="company" class="form-label">Company Name</label>
-                        <input type="text" class="form-control" ng-model="companyName2" placeholder="ex:Zoho">
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-lg-3">
-                        <label for="" class="form-label">Country</label>
-                        <input type="text" class="form-control" ng-model="work2country" placeholder="ex:India">
-                    </div>
-                    <div class="col-lg-3">
-                        <label for="" class="form-label">State</label>
-                        <input type="text" class="form-control" ng-model="work2state" placeholder="ex:Tamil Nadu">
-                    </div>
-                    <div class="col-lg-3">
-                        <label for="" class="form-label">City</label>
-                        <input type="text" class="form-control" ng-model="work2City" placeholder="ex:Chennai">
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-lg-2" >
-                        <label for="text" class="form-label">Work Start Date</label>
-                        <input type="date" class="form-control" ng-model="work2St" pattern="\d{4}-\d{2}-\d{2}">
-                    </div>
-                    <div class="col-lg-2" >
-                        <label for="text" class="form-label">Work End Date</label>
-                        <input type="date" class="form-control" ng-model="work2End" pattern="\d{4}-\d{2}-\d{2}">
-
-                        <div class="form-check form-check-inline mt-2">
-                            <input type="checkbox" class="form-check-input" ng-model="currentlyWorkHere2">
-                            <label for="" class="form-check-label">I&nbsp;currently&nbsp;work&nbsp;here</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-check form-check-inline mt-2">
-                    <input type="checkbox" class="form-check-input" ng-model="moreWorkEx2">
-                    <label for="" class="form-check-label">Add more Working Experience</label>
-                </div>
-            </div>
-            <!--Skills-->
-            <div class="row mt-5">
-                <h2 class="mb-3">4) Your Skills</h2>
-                <div class="row">
-                    <div class="col-lg-5 d-inline">
-                        <label for="skills" class="form-label">Enter Your Skills</label>
-                        <textarea type="text" class="form-control"
-                         ng-model="skillsName" placeholder="HTML,CSS,JS">
-                        </textarea>                  
-                        <!-- <button class="btn btn-success mt-1" ng-click="addSkills();">Add Skills</button> -->
-                    </div>
-                </div>
-            </div>
-            <!--Certifications-->
-            <div class="row mt-5">
-                <h2 class="mb-3">5) Your Certifications</h2>
-                <div class="row">
-                    <div class="col-lg-3">
-                        <label for="" class="form-label">Enter Certification Name</label>
-                        <input type="text" class="form-control" ng-model="CertificationName" placeholder="English Junior Typeist">
-                    </div>
-                    <div class="col-lg-3">
-                        <label for="" class="form-label">Enter Certification End Date</label>
-                        <input type="text" class="form-control" ng-model="CertificationsDate" placeholder="Enter Certification End Date">
-                    </div>
-
-                </div>
-            </div>
-            <!--Projects-->
-            <div class="row mt-5">
-                <h2 class="mb-3">6) Your Projects</h2>
-                <div class="row">
-                    <div class="col-lg-3">
-                        <label for="" class="form-label">Enter Project Name</label>
-                        <input type="text" class="form-control" ng-model="projectName" placeholder="English Junior Typeist">
-                    </div>
-                    <div class="col-lg-3">
-                        <label for="" class="form-label">About Project</label>
-                        <textarea name="" id="" cols="2" rows="3" class="form-control" ng-model="projectAbout" placeholder="About your Project..."></textarea>
-                    </div>
+            <div class="row mt-3" ng-show="yourResumeData.certification">
+                <h5 class="resume-Subheading">CERTIFICATION</h5>
+                <div class="d-flex flex-column">
+                    <ul class="certification-ul">
+                        <li>{{yourResumeData.certification.certificationName}} <span>-</span>
+                            {{yourResumeData.certification.certificationAbout}}</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/pdfmake.min.js"></script>
-        <section class="mt-5 template1" id="resumeSection">
-        <!--Download & Preview Resume-->
-            <div class="container border_g" >
-                <div class="row mt-4 ml-4">
-                    <div class="col-lg-12">
-                        <h1 class="firstName">{{firstName}}  {{lastName}}</h1>
-                        <h4 class="profession">{{profession}}</h4>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col">
-                            <div class="card addressCard">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center justify-content-center">
-                                        <div class="iconBtn"><button class="btn btn-sm"><i class="fas fa-phone-square-alt"></i></button></div>
-                                        <div class="addressTxt">{{phoneNumber}}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card addressCard">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center justify-content-center">
-                                        <div class="iconBtn"><button class="btn btn-sm"><i class="fas fa-envelope"></i></button></div>
-                                        <div class="addressTxt">{{emailId}}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card addressCard">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center justify-content-center">
-                                        <div class="iconBtn"><button class="btn btn-sm"><i class="fas fa-map-marker-alt"></i></button></div>
-                                        <div class="addressTxt">{{city}}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="row mt-4">
-                    <h5 class="resume-Subheading">CAREER OBJECTIVE</h5>
-                    <div class="col">
-                        <p class="careerObjTxt">{{careerObjective}}</p>
-                    </div>
-                </div>
-    
-                <div class="row mt-3">
-                    <h5 class="resume-Subheading">EXPERIENCE</h5>
-                    <div class="d-flex">
-                        <p>{{jobTitle}}</p>,
-                        <p>{{workCity}}</p>,
-                        <p>{{workstate}}</p>
-                    </div>
-                    <div class="d-flex">
-                        <p>{{companyName}}</p>,
-                        <p>{{work1St}}</p>-
-                        <p>{{work1End}}</p>
-                    </div>
-                </div>
-    
-                <div class="row mt-3">
-                    <h5 class="resume-Subheading">EDUCATION</h5>
-                    <div class="d-flex">
-                        <p>{{degree}}</p>,
-                        <p>{{collegeLocation}}</p>,
-                        
-                    </div>
-                    <div class="d-flex">
-                        <p>{{collegeName}}</p>,  <p>{{graduationSt}}</p> - <p>{{graduationEnd}}</p>
-                    </div>
-                </div>
-    
-                <div class="row mt-3">
-                    <h5 class="resume-Subheading">Skills</h5>
-                    <!--Skills Cards-->
-                    <div class="d-flex flex-column">
-                        <ul class="skills-ul">
-                            <li>{{skillsName}}</li>
-                        </ul>
-                    </div>
-    
-                </div>
-    
-                <div class="row mt-3">
-                    <h5 class="resume-Subheading">CERTIFICATION</h5>
-                    <div class="d-flex flex-column">
-                        <ul class="certification-ul">
-                            <li>{{CertificationName}} - {{CertificationsDate}}</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
     <div class="d-flex justify-content-center align-items-center mt-4" id="download-btns" style="gap:4rem;">
         <!-- <button class="btn btn-success btn-block btn-lg" onclick="resumeSaveAsWord();">Download Resume as Word Document</button> -->
-        <button class="btn btn-success btn-lg" onclick="resumeSaveAsPdf();">Download Resume as PDF</button>
+        <button class="btn btn-success btn-lg" id="savePdf">Download Resume as PDF</button>
     </div>
-    <h6 class="text-center mt-3 font-weight-bold resume-viewer">after Download your Resume view<a href="https://products.aspose.app/words/viewer" target="_blank" class="">Document viewer</a></h6>
+    <h6 class="text-center mt-3 font-weight-bold resume-viewer">After downloading your resume, please view it in the<a href="https://products.aspose.app/words/viewer" target="_blank" class="">Document viewer</a></h6>
     
     <br><hr><br>
     <div class="container feedback-con">
-        <div class="row">
+        <div class="row justify-content-start align-items-center">
             <div class="col-lg-4">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeO0XfVJx5d-Xnhf_ucObrrjyYnplDmT_ygpZLJ3OZfzmKeBw/viewform?usp=sf_link" target="_blank" class="btn btn-info btn-lg btn-outline-secondary text-dark">Share your feedback here</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeO0XfVJx5d-Xnhf_ucObrrjyYnplDmT_ygpZLJ3OZfzmKeBw/viewform?usp=sf_link" target="_blank" class="btn btn-info btn-lg btn-outline-secondary text-light">
+                    <i class="fas fa-comments"></i>&nbsp;Share your feedback here
+                </a>
             </div>
         </div>
     </div>
 
     <footer>
-        <div class="container footer-con mt-5">
-            <div class="row justify-content-center align-items-center">
+        <div class="container footer-con mt-5 mb-5">
+            <div class="row justify-content-start align-items-center">
                 <div class="col-lg-1">
                     <a href="https://www.instagram.com/webdev_murali/" target="_blank" >
-                        <img src="img/icons/instagram-sm.svg" alt="Instagram" title="Instagram" class="img-fluid">
+                        <img src="assets/img/icons/instagram-sm.svg" alt="Instagram" title="Instagram" class="img-fluid">
                     </a>
                 </div>
                 <div class="col-lg-1">
                     <a href="https://api.whatsapp.com/send?phone=9514773633&text=Hi.."  target="_blank">
-                        <img src="img/icons/whatsapp-sm.svg" alt="whatsapp" title="whatsapp" class="img-fluid">
+                        <img src="assets/img/icons/whatsapp-sm.svg" alt="whatsapp" title="whatsapp" class="img-fluid">
+                    </a>
+                </div>
+                <div class="col-lg-1">
+                    <a href="https://www.youtube.com/@RTMurali-Edits"  target="_blank">
+                        <i class="fab fa-2x fa-youtube" style="color:red;" title="youtube"></i>
                     </a>
                 </div>
             </div>
@@ -463,37 +526,33 @@
     <!---Bootstrap V5 js-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    <!--Save Resume template js-->
+ 
+ 
     <script>
-        var fileCount = 1;
-        function resumeSaveAsWord() {
-            console.log("save as word");
-            var resumeHTML = document.getElementById("resumeSection").innerHTML;
-            var blob = new Blob([resumeHTML], {type: "text/html;charset=utf-8"});
-            //saveAs(blob, "resume.html");
+        document.getElementById('savePdf').addEventListener('click', function() {
+          const element = document.getElementById('resumeSection'); // Replace with the ID of your content element
+          console.log(element.innerHTML);
+            // Open a new window with the HTML content
+            const newWindow = window.open('', '_blank');
+            newWindow.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+                    <link rel="stylesheet" href="assets/css/templates.css">
+                    <style>
 
-            // Generate the Word file
-            const content = resumeHTML;
-            const wordFile = new File([content], "myResume" + fileCount + "Doc.docx", {type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document"});
-            fileCount++;
-            // Save the Word file
-            saveAs(wordFile);
-        }
-    </script>
-
-
-    <script>
-        function resumeSaveAsPdf() {
-          var resumeHTML = document.getElementById("resumeSection").innerHTML;
-          
-           var popupWindow;
-          //window.open('','_blank',);
-          window.print();
-          
-        }
-    </script>
-        
-
+                    </style>
+                </head>
+                <body id="resumeSection">
+                    ${element.innerHTML}
+                </body>
+                </html>
+            `);
+            newWindow.print();
+        });
+      </script>
 </body>
 </html>
 

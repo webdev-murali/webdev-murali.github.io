@@ -1,9 +1,3 @@
-.border_g{
-    border: 2px solid darkgray;
-}
-body{
-    font-family:'Times New Roman', Times, serif;
-}
 #templates-sec .card{
     cursor: pointer;
 }
