@@ -4,7 +4,7 @@ var app = angular.module("resumeApp",[]);
 app.controller("templateCtrl",function ($scope,$http) {
   //$scope.yourResumeData = {};
   $scope.yourResumeData = {
-    personalInfo: {}
+    //personalInfo: {}
   };
   //Save-ResumeData
   $scope.saveResumeData = function(resumeData){

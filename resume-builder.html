@@ -376,7 +376,7 @@
                     </div> -->
                 </div>
 
-                <div class="row  flex-row">
+                <div class="row  flex-row" ng-show="yourResumeData.personalInfo">
                     <div class="d-flex justify-content-start align-items-center personalInfo-row2">
                         <div class="card addressCard">
                             <div class="card-body">
@@ -411,7 +411,6 @@
                             </div>
                         </div>
                     </div>
- 
                 </div>
             </div>
 
@@ -486,7 +485,7 @@
 
     <div class="d-flex justify-content-center align-items-center mt-4" id="download-btns" style="gap:4rem;">
         <!-- <button class="btn btn-success btn-block btn-lg" onclick="resumeSaveAsWord();">Download Resume as Word Document</button> -->
-        <button class="btn btn-success btn-lg" id="savePdf">Download Resume as PDF</button>
+        <button class="btn btn-success btn-lg"  id="savePdf">Download Resume as PDF</button>
     </div>
     <h6 class="text-center mt-3 font-weight-bold resume-viewer">After downloading your resume, please view it in the<a href="https://products.aspose.app/words/viewer" target="_blank" class="">Document viewer</a></h6>
     
@@ -550,7 +549,8 @@
                 </body>
                 </html>
             `);
-            newWindow.print();
+            setTimeout(newWindow.print(),3000);
+            ;
         });
       </script>
 </body>
