@@ -1,71 +1,22 @@
-*{
-    font-family: 'Poppins', sans-serif;
-}
-#resumeSection p , #resumeSection li{
-    font-size: 25px;
-    /* font-weight: 500; */
-}
-label{
-    /* font-weight: bold; */
-}
+*{font-family: 'Poppins', sans-serif;}
+#resumeSection .border_g{border: 2px solid darkgray;}
+#resumeSection p , #resumeSection li{font-size: 25px;}
+#userDetails h2{color:#6c757d;font-weight: bold;}
+.firstName{color:black;font-weight: bold;font-size: 45px;}
+.profession{color:darkgrey;font-weight: bold;}
+.resume-Subheading{font-weight: bold;color:brown;font-size: 27px;}
+.resume-Subheading::after{content: ":";}
+#resumeSection .addressCard .iconBtn .btn{border-radius: 43px;background: #fff;}
+#resumeSection .addressCard {background: gainsboro;width: fit-content ;}
+.profilepic{width: 3.5cm; height: 4.5cm;}
+.personalInfo-row2{gap:1rem;}
+#resumeSection .addressCard .card-body .d-flex {gap:8px;}
+#resumeSection .addressCard .card-body {padding: .5rem !important;}
+#resumeSection .addressCard{border:none !important;}
 .help-h1r{
     width: 59rem;
     rotate: 90deg;
     position: relative;
     background: red !important;
     top: 29rem;
-}
-.addressCard{
-    /* background-color: gainsboro; */
-}
-.border_g{
-    border: 2px solid darkgray;
-}
-#userDetails h2{
-    color:#6c757d;
-    font-weight: bold;
-    
-}
-.firstName{
-    color:black;
-    font-weight: bold;
-    font-size: 45px;
-}
-.profession{
-    color:darkgrey;
-    font-weight: bold;
-}
-.resume-Subheading{
-    /* text-decoration: underline;
-    text-decoration-color: darkgray;
-    text-decoration-style: solid; */
-    font-weight: bold;
-    color:brown;
-    font-size: 27px;
-}
-.resume-Subheading::after{
-    content: ":";
-}
-#resumeSection .addressCard .iconBtn .btn{
-    border-radius: 43px;
-    background: #fff;
-}
-#resumeSection .addressCard {
-    background: gainsboro;
-    width: fit-content ;
-}
-.profilepic{
-    width: 3.5cm; height: 4.5cm;
-}
-.personalInfo-row2{
-    gap:1rem;
-}
-#resumeSection .addressCard .card-body .d-flex {
-    gap:8px;
-}
-#resumeSection .addressCard .card-body {
-    padding: .5rem !important;
-}
-#resumeSection .addressCard{
-    border:none !important;
 }

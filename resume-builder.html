@@ -27,41 +27,46 @@
     <link rel="stylesheet" href="assets/css/resumeBuilder.css">
     <!--Internall CSS-->
     <style>
-      #gs_tti50 input
-      {
-        background: none !important;
-      }
-      .gsc-search-button-v2{
-        background-color: #00887a !important;
-        
-      }
- 
-      .table.gsc-search-box td.gsc-input{padding-right: 0 !important;}
-      #gs_id50 tbody tr{border: 2px solid gainsboro;}
-      #gs_tti50 input:focus{box-shadow: none !important;color:black !important}
+    body{background-color: ghostwhite;}
+    .darkMode{background-color: #2d2d2d !important;}
+    header .nav-link{font-size: 1.5rem;}
+    header .nav-link:hover{text-decoration: underline;}
+    header .navbar{box-shadow: 0px 0px 10px #888888 !important;}
+    .gsc-input {font-size: 17px !important;}
+    .gsc-control-cse{background:none !important;border:unset !important;}
+    .gsc-search-button-v2{background-color: #00887a !important;}
+    .table.gsc-search-box td.gsc-input{padding-right: 0 !important;}
+    #gs_id50 tbody tr{border: 2px solid gainsboro;}
+    #gs_tti50 input:focus{box-shadow: none !important;color:black !important}
     </style>  
 </head>
 <body ng-app="resumeApp" ng-controller="templateCtrl">
     <header>
-        <nav class="navbar navbar-expand-sm bg-info navbar-dark">
+        <nav class="navbar navbar-expand-sm bg-light navbar-light ">
             <div class="container-fluid">
-            <!-- <a class="navbar-brand" href="#">Logo</a> -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html" target="_blank">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="mychatgpt.html" target="_blank">My ChatGPT</a>
-                    </li>
-                </ul>
-            </div>
+                <!-- <a class="navbar-brand" href="#">Logo</a> -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="index.html" target="_blank">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="mychatgpt.html" target="_blank">My ChatGPT</a>
+                        </li>
+                    </ul>
+                    <div class="" style="margin: auto 1rem auto auto;">
+                        <div class="gcse-search"></div>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
+    <!-- <div class="d-flex float-end mt-2 mr-2">
+        <button class="btn btn-small btn-light btn-outline-dark" ng-click="switchTheme();">{{themeTxt}}</button>
+    </div> -->
     <div class="container mt-5 main-con">
         <div class="row justify-content-center">
             <div class="col-lg-12">
@@ -70,23 +75,21 @@
         </div>
     </div>
 
-    <!-- <div class="mx-5">H>></div> -->
     <!--Step1 Enter Details-->
     <section id="userDetails">
-        <div class="container-fluid mt-5 d-flex flex-row px-5">
+        <div class="container mt-5 d-flex flex-row">
             <div class="row" >
-                <div class=""style="width:fit-content !important;">
-                    <h2 class="mb-3">Personal details:</h2>
+                <div class="">
                     <form role="form" method="POST" name="resumeForm">
+                    <h2 class="mb-3">Personal details:</h2>
                     <div class="row">
-                        <div class="col-lg-3" >
+                        <div class="col-lg-3 " >
                             <label for="text" class="form-label">FirstName</label>
-                            <input type="text" class="form-control" ng-model="yourResumeData.personalInfo.firstName" maxlength="20" required placeholder="ex:Murali">
+                            <input type="text" class="form-control" ng-model="yourResumeData.personalInfo.firstName" maxlength="20" placeholder="ex:Murali" required>
                         </div>
                         <div class="col-lg-3" >
                             <label for="text" class="form-label"> LastName</label>
                             <input type="text" class="form-control" ng-model="yourResumeData.personalInfo.lastName" maxlength="15" placeholder="ex:Raj">
-                            
                         </div>
                     </div>
                     
@@ -117,9 +120,9 @@
                     </div>
         
                     <div class="row mt-5">
-                        <div class="col-lg-4">
+                        <div class="col-lg-6">
                             <label for="careerObjective" class="form-label">Career Objective</label>
-                            <textarea name="" id="careerObjective" cols="3" rows="4" ng-model="yourResumeData.careerObjective" class="form-control"></textarea>
+                            <textarea name="" id="careerObjective" cols="10" rows="4" ng-model="yourResumeData.careerObjective" class="form-control"></textarea>
                         </div>
                     </div>
         
@@ -149,15 +152,15 @@
                         </div>
                         
                         <div class="row mt-5">
-                            <div class="col-lg-3">
+                            <div class="col-lg-4">
                                 <label for="Degree" class="form-label">Degree</label>
                                 <input type="text" class="form-control" ng-model="yourResumeData.education.degree" placeholder="ex:Bachelor of Computer Application">
                             </div>
-                            <div class="col-lg-2" >
+                            <div class="col-lg-1" >
                                 <label for="text" class="form-label">Start&nbsp;Year</label>
                                 <input type="text" class="form-control" maxlength="4" ng-model="yourResumeData.education.graduationSt" placeholder="ex:2018">
                             </div>
-                            <div class="col-lg-2" >
+                            <div class="col-lg-1" >
                                 <label for="text" class="form-label">End&nbsp;Year</label>
                                 <input type="text" class="form-control" maxlength="4" ng-model="yourResumeData.education.graduationEnd" placeholder="ex:2021">
                             </div>
@@ -166,7 +169,7 @@
          
                     <!--Work Experience-01-->
                     <div class="row mt-5" ng-show="true">
-                        <h2 class="mb-3">Work Experience</h2>
+                        <h2 class="mb-3">Work Experience:</h2>
                         <div class="row">
                             <div class="col-lg-3">
                                 <label for="" class="form-label">Job Title</label>
@@ -214,7 +217,7 @@
         
                     <!--Work Experience-2-->
                     <div class="row mt-5" ng-show="moreWorkEx1">
-                        <h2 class="mb-3">Work Experience-2</h2>
+                        <h2 class="mb-3">Work Experience-2:</h2>
                         <div class="row">
                             <div class="col-lg-3">
                                 <label for="" class="form-label">Job Title</label>
@@ -261,7 +264,7 @@
                     </div>
                     <!--Skills-->
                     <div class="row mt-5">
-                        <h2 class="mb-3">Your Skills</h2>
+                        <h2 class="mb-3">Your Skills:</h2>
                         <div class="row">
                             <div class="col-lg-5 d-inline">
                                 <label for="skills" class="form-label">Enter Your Skills</label>
@@ -274,7 +277,7 @@
                     </div>
                     <!--Certifications-->
                     <div class="row mt-5">
-                        <h2 class="mb-3">Your Certifications</h2>
+                        <h2 class="mb-3">Your Certifications:</h2>
                         <div class="row">
                             <div class="col-lg-4">
                                 <label for="" class="form-label">Certification Name</label>
@@ -301,30 +304,19 @@
                             </div>
                         </div>
                     </div> -->
-                    <div class="row mt-5">
-                        <div class="col-lg-4">
+                    <div class="row mt-5 flex-row saveResetBtn-row">
+                        <div class="col-lg-4 col-sm-2">
                             <input type="submit" class="btn btn-success btn-lg" value="Save details"  ng-click="saveResumeData(yourResumeData)">
-                            
                         </div>
-                        <div class="col-lg-4">
-                            <input type="reset" class="btn btn-danger btn-lg " value="Reset details" ng-click="resetData()">
+                        <div class="col-lg-4 col-sm-2">
+                            <input type="reset" class="btn btn-light btn-outline-danger btn-lg " value="Reset details" ng-click="resetData()">
                         </div>
                     </div>
                     </form> 
                 </div>
             </div>
             <!--Help row-->
-            <div class="" id="help-col" >
-                <div class="row " style="width:20rem;">
-                    <div class="">
-                        <h2>Google Search</h2>
-                        <div class="">
-                            <div class="gcse-search"></div>
-                        </div>
-                       
-                    </div>
-                </div>
-
+            <div class="" id="help-coll" >
             </div>
         </div>
         <hr>
@@ -476,7 +468,8 @@
                 <div class="d-flex flex-column">
                     <ul class="certification-ul">
                         <li>{{yourResumeData.certification.certificationName}} <span>-</span>
-                            {{yourResumeData.certification.certificationAbout}}</li>
+                            {{yourResumeData.certification.certificationAbout}}
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -493,7 +486,7 @@
     <div class="container feedback-con">
         <div class="row justify-content-start align-items-center">
             <div class="col-lg-4">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeO0XfVJx5d-Xnhf_ucObrrjyYnplDmT_ygpZLJ3OZfzmKeBw/viewform?usp=sf_link" target="_blank" class="btn btn-info btn-lg btn-outline-secondary text-light">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeO0XfVJx5d-Xnhf_ucObrrjyYnplDmT_ygpZLJ3OZfzmKeBw/viewform?usp=sf_link" target="_blank" class="btn btn-light btn-lg btn-outline-info text-dark">
                     <i class="fas fa-comments"></i>&nbsp;Share your feedback here
                 </a>
             </div>
@@ -509,7 +502,7 @@
                     </a>
                 </div>
                 <div class="col-lg-1">
-                    <a href="https://api.whatsapp.com/send?phone=9514773633&text=Hi.."  target="_blank">
+                    <a href="https://api.whatsapp.com/send?phone=9514773633&text=Hi..."  target="_blank">
                         <img src="assets/img/icons/whatsapp-sm.svg" alt="whatsapp" title="whatsapp" class="img-fluid">
                     </a>
                 </div>
@@ -549,7 +542,7 @@
                 </body>
                 </html>
             `);
-            setTimeout(newWindow.print(),3000);
+            setTimeout(newWindow.print(),10000);
             ;
         });
       </script>

@@ -2,6 +2,22 @@
 var app = angular.module("resumeApp",[]);
 //create controller 
 app.controller("templateCtrl",function ($scope,$http) {
+  //switch-theme
+  $scope.themeTxt = "Dark Mode";
+
+  $scope.switchTheme = function(){
+    console.log($scope.themeTxt);
+    if($scope.themeTxt == "Dark Mode"){
+      $scope.themeTxt = "Light Mode";
+      document.body.classList.add('darkMode');
+      document.getElementsByTagName('nav')[0].classList.add('bg-dark');
+    }else if($scope.themeTxt == "Light Mode"){
+      $scope.themeTxt = "Dark Mode";
+      document.body.classList.remove('darkMode');
+      document.getElementsByTagName('nav')[0].classList.remove('bg-dark');
+    }
+    
+  }
   //$scope.yourResumeData = {};
   $scope.yourResumeData = {
     //personalInfo: {}
@@ -47,7 +63,7 @@ app.controller("templateCtrl",function ($scope,$http) {
   //Reset-Date
   $scope.resetData = function(){
     //$scope.resumeForm.$setPristine();
-    console.log("Resume Date reset..");
+    console.log("Resume Data reset..");
     $scope.yourResumeData = {};
   }
   //get-JSON-Data
@@ -60,26 +76,7 @@ app.controller("templateCtrl",function ($scope,$http) {
     console.log("Error loading...",error);
   })
 
-
-
-  //Show-hide-section-row
-  // if($scope.skills.length == 0){
-  //   console.log("if skills hide..");
-  //   $scope.ifSkills = false;
-  // }else{
-    $scope.ifSkills = true;
-  // }
-
-  // if($scope.CertificationName === "" && $scope.CertificationsDate ===""){
-  //   console.log("if certification hide..");
-  //   $scope.ifCertification = false;
-  // }else{
-    $scope.ifCertification = true;
-  // }
   //add skills
-  //comma separate
-
-
   // $scope.addSkills = function(){
   //   $scope.singleSkill = $scope.multiSkill.split(",");
   //   // $scope.skills = $scope.skills.filter(function(value, index, self) {
