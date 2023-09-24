@@ -77,50 +77,50 @@
 
     <!--Step1 Enter Details-->
     <section id="userDetails">
-        <div class="container mt-5 d-flex flex-row">
+        <div class="container mt-4 d-flex flex-row">
             <div class="row" >
                 <div class="">
                     <form role="form" method="POST" name="resumeForm">
-                    <h2 class="mb-3">Personal details:</h2>
-                    <div class="row">
-                        <div class="col-lg-3 " >
-                            <label for="text" class="form-label">FirstName</label>
-                            <input type="text" class="form-control" ng-model="yourResumeData.personalInfo.firstName" maxlength="20" placeholder="ex:Murali" required>
+                    <h2 class="mb-3">Personal details:<a ng-click="getSampleData();" href=""  class="text-underline text-info fs-5">set sample details</a></h2>
+                    <div class="row gy-4">
+                        <div class="col-9 col-lg-3">
+                            <label for="firstName" class="form-label">FirstName</label>
+                            <input type="text" autocomplete="on" class="form-control" name="firstName" ng-model="yourResumeData.personalInfo.firstName" maxlength="20" placeholder="ex:Murali" required>
                         </div>
-                        <div class="col-lg-3" >
+                        <div class="col-9 col-lg-3" >
                             <label for="text" class="form-label"> LastName</label>
-                            <input type="text" class="form-control" ng-model="yourResumeData.personalInfo.lastName" maxlength="15" placeholder="ex:Raj">
+                            <input type="text" autocomplete="on" class="form-control" ng-model="yourResumeData.personalInfo.lastName" maxlength="15" placeholder="ex:Raj">
                         </div>
                     </div>
                     
-                    <div class="row mt-5">
-                        <div class="col-lg-2" >
-                            <label for="text" class="form-label">State</label>
-                            <input type="text" class="form-control" ng-model="yourResumeData.personalInfo.state" placeholder="ex:Tamil Nadu">
+                    <div class="row mt-lg-2 gy-4 mt-auto">
+                        <div class="col-9 col-lg-2" >
+                            <label for="state" class="form-label">State</label>
+                            <input type="text" class="form-control" name="state" ng-model="yourResumeData.personalInfo.state" placeholder="ex:Tamil Nadu">
                         </div>
-                        <div class="col-lg-2" >
-                            <label for="text" class="form-label">City</label>
-                            <input type="text" class="form-control" ng-model="yourResumeData.personalInfo.city" placeholder="ex:Trichy">
+                        <div class="col-9 col-lg-2" >
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" autocomplete="on" name="city" class="form-control" ng-model="yourResumeData.personalInfo.city" placeholder="ex:Trichy">
                         </div>
-                        <div class="col-lg-2" >
-                            <label for="text" class="form-label">Pincode</label>
-                            <input type="text" class="form-control" ng-model="yourResumeData.personalInfo.pincode" placeholder="ex:621001">
+                        <div class="col-6 col-5 col-lg-2" >
+                            <label for="pincode" class="form-label">Pincode</label>
+                            <input type="text" inputmode="numeric" name="pincode" class="form-control"  ng-model="yourResumeData.personalInfo.pincode" placeholder="ex:621001">
                         </div>
                     </div>
         
-                    <div class="row mt-5">
-                        <div class="col-lg-2">
+                    <div class="row mt-lg-2 gy-4 mt-auto">
+                        <div class="col-6 col-lg-2">
                             <label for="phone" class="form-label">Phone Number</label>
-                            <input type="text" class="form-control" ng-model="yourResumeData.personalInfo.phoneNumber" maxlength="20" placeholder="ex:0987654321">
+                            <input type="text" autocomplete="on" inputmode="numeric"  name="phone" class="form-control"  ng-model="yourResumeData.personalInfo.phoneNumber" maxlength="20" placeholder="ex:0987654321">
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-10 col-lg-4">
                             <label for="email"class="form-label">Email Id</label>
-                            <input type="email" class="form-control" ng-model="yourResumeData.personalInfo.emailId" maxlength="40" placeholder="ex:youremailid@gmail.com">
+                            <input type="email" name="email" autocomplete="on" inputmode="email" class="form-control" ng-model="yourResumeData.personalInfo.emailId" maxlength="40" placeholder="ex:youremailid@gmail.com">
                         </div>
                     </div>
         
-                    <div class="row mt-5">
-                        <div class="col-lg-6">
+                    <div class="row mt-lg-2 gy-4 mt-auto">
+                        <div class="col-10 col-lg-6">
                             <label for="careerObjective" class="form-label">Career Objective</label>
                             <textarea name="" id="careerObjective" cols="10" rows="4" ng-model="yourResumeData.careerObjective" class="form-control"></textarea>
                         </div>
@@ -140,29 +140,29 @@
         
                     <div class="row mt-5">
                         <h2 class="mb-3">Education:</h2>
-                        <div class="row">
-                            <div class="col-lg-4" >
-                                <label for="text" class="form-label">College</label>
-                                <input type="text" class="form-control" ng-model="yourResumeData.education.collegeName" maxlength="40"  placeholder="ex:Bishop Heber College">
+                        <div class="row gap1">
+                            <div class="col-11 col-lg-4" >
+                                <label for="college" class="form-label">College</label>
+                                <input type="text" name="college" class="form-control" ng-model="yourResumeData.education.collegeName" maxlength="40"  placeholder="ex:Bishop Heber College">
                             </div>
-                            <div class="col-lg-3" >
-                                <label for="text" class="form-label">Location</label>
-                                <input type="text" class="form-control" ng-model="yourResumeData.education.collegeLocation" maxlength="40" placeholder="ex:Trichy">
+                            <div class="col-11 col-lg-3" >
+                                <label for="ClgLocation" class="form-label">Location</label>
+                                <input type="text" name="ClgLocation" class="form-control" ng-model="yourResumeData.education.collegeLocation" maxlength="40" placeholder="ex:Trichy">
                             </div>
                         </div>
                         
-                        <div class="row mt-5">
-                            <div class="col-lg-4">
-                                <label for="Degree" class="form-label">Degree</label>
-                                <input type="text" class="form-control" ng-model="yourResumeData.education.degree" placeholder="ex:Bachelor of Computer Application">
+                        <div class="row mt-lg-2 gy-4 mt-auto">
+                            <div class="col-11 col-lg-4">
+                                <label for="ClgDegree" class="form-label">Degree</label>
+                                <input type="text" name="ClgDegree" class="form-control" ng-model="yourResumeData.education.degree" placeholder="ex:Bachelor of Computer Application">
                             </div>
-                            <div class="col-lg-1" >
-                                <label for="text" class="form-label">Start&nbsp;Year</label>
-                                <input type="text" class="form-control" maxlength="4" ng-model="yourResumeData.education.graduationSt" placeholder="ex:2018">
+                            <div class="col-3 col-lg-1" >
+                                <label for="ClgStYear" class="form-label">Start&nbsp;Year</label>
+                                <input type="text" name="ClgstYear" inputmode="numeric" class="form-control" maxlength="4" ng-model="yourResumeData.education.graduationSt" placeholder="2018">
                             </div>
-                            <div class="col-lg-1" >
-                                <label for="text" class="form-label">End&nbsp;Year</label>
-                                <input type="text" class="form-control" maxlength="4" ng-model="yourResumeData.education.graduationEnd" placeholder="ex:2021">
+                            <div class="col-3 col-lg-1" >
+                                <label for="ClgEnYear" class="form-label">End&nbsp;Year</label>
+                                <input type="text" name="ClgEnYear" inputmode="numeric" class="form-control" maxlength="4" ng-model="yourResumeData.education.graduationEnd" placeholder="2021">
                             </div>
                         </div>
                     </div>
@@ -170,38 +170,38 @@
                     <!--Work Experience-01-->
                     <div class="row mt-5" ng-show="true">
                         <h2 class="mb-3">Work Experience:</h2>
-                        <div class="row">
+                        <div class="row gap1">
                             <div class="col-lg-3">
-                                <label for="" class="form-label">Job Title</label>
-                                <input type="text" class="form-control" ng-model="yourResumeData.workExperience[0].jobTitle" placeholder="ex:Web desinger">
+                                <label for="WorkEx1JobTitle" class="form-label">Job Title</label>
+                                <input type="text" name="WorkEx1JobTitle" class="form-control" ng-model="yourResumeData.workExperience[0].jobTitle" placeholder="ex:Web desinger">
                             </div>
                             <div class="col-lg-4">
-                                <label for="company" class="form-label">Company Name</label>
-                                <input type="text" class="form-control" ng-model="yourResumeData.workExperience[0].companyName" placeholder="ex:Zoho">
+                                <label for="WorkEx1CompanyName" class="form-label">Company Name</label>
+                                <input type="text" name="WorkEx1CompanyName" class="form-control" ng-model="yourResumeData.workExperience[0].companyName" placeholder="ex:Zoho">
                             </div>
                         </div>
-                        <div class="row mt-4">
-                            <div class="col-lg-2">
-                                <label for="" class="form-label">Country</label>
-                                <input type="text" class="form-control" ng-model="yourResumeData.workExperience[0].workCountry" placeholder="ex:India">
+                        <div class="row gap1 mt-4">
+                            <div class="col-9 col-lg-2">
+                                <label for="WorkEx1Country" class="form-label">Country</label>
+                                <input type="text" name="WorkEx1Country" class="form-control" ng-model="yourResumeData.workExperience[0].workCountry" placeholder="ex:India">
                             </div>
-                            <div class="col-lg-2">
-                                <label for="" class="form-label">State</label>
-                                <input type="text" class="form-control" ng-model="yourResumeData.workExperience[0].workState" placeholder="ex:Tamil Nadu">
+                            <div class="col-9 col-lg-2 ">
+                                <label for="WorkEx1State" class="form-label">State</label>
+                                <input type="text" name="WorkEx1State" class="form-control" ng-model="yourResumeData.workExperience[0].workState" placeholder="ex:Tamil Nadu">
                             </div>
-                            <div class="col-lg-3">
-                                <label for="" class="form-label">City</label>
-                                <input type="text" class="form-control" ng-model="yourResumeData.workExperience[0].workCity" placeholder="ex:Chennai">
+                            <div class="col-9 col-lg-3">
+                                <label for="WorkEx1City" class="form-label">City</label>
+                                <input type="text" name="WorkEx1City" class="form-control" ng-model="yourResumeData.workExperience[0].workCity" placeholder="ex:Chennai">
                             </div>
                         </div>
-                        <div class="row mt-4">
-                            <div class="col-lg-2" >
-                                <label for="text" class="form-label">Start&nbsp;Date</label>
-                                <input type="text" class="form-control" maxlength="11" ng-model="yourResumeData.workExperience[0].workStart" placeholder="ex:01-05-2019">
+                        <div class="row mt-4 gap1">
+                            <div class="col-6 col-lg-2" >
+                                <label for="WorkEx1StDate" class="form-label">Start&nbsp;Date</label>
+                                <input type="text" name="WorkEx1StDate" class="form-control" maxlength="11" ng-model="yourResumeData.workExperience[0].workStart" placeholder="ex:01-05-2019">
                             </div>
-                            <div class="col-lg-2" >
-                                <label for="text" class="form-label">End&nbsp;Date</label>
-                                <input type="text" class="form-control" maxlength="11" ng-model="yourResumeData.workExperience[0].workEnd" placeholder="ex:01-05-2022">
+                            <div class="col-6 col-lg-2" >
+                                <label for="WorkEx1EnDate" class="form-label">End&nbsp;Date</label>
+                                <input type="text" name="WorkEx1EnDate" class="form-control" maxlength="11" ng-model="yourResumeData.workExperience[0].workEnd" placeholder="ex:01-05-2022">
         
                                 <!-- <div class="form-check form-check-inline mt-2">
                                     <input type="checkbox" class="form-check-input" ng-model="currentlyWorkHere">
@@ -210,46 +210,46 @@
                             </div>
                         </div>
                         <div class="form-check form-check-inline mt-2">
-                            <input type="checkbox" class="form-check-input" ng-model="moreWorkEx1">
-                            <label for="" class="form-check-label">Add more Working Experience</label>
+                            <input type="checkbox" class="form-check-input" name="workExperience" ng-model="moreWorkEx1">
+                            <label for="workExperience" class="form-check-label">Add more Working Experience</label>
                         </div>
                     </div>
         
                     <!--Work Experience-2-->
                     <div class="row mt-5" ng-show="moreWorkEx1">
                         <h2 class="mb-3">Work Experience-2:</h2>
-                        <div class="row">
+                        <div class="row gap1">
                             <div class="col-lg-3">
-                                <label for="" class="form-label">Job Title</label>
-                                <input type="text" class="form-control" ng-model="yourResumeData.workExperience[1].jobTitle" placeholder="ex:Web desinger">
+                                <label for="workEx2JobTitle" class="form-label">Job Title</label>
+                                <input type="text" name="workEx2JobTitle" class="form-control" ng-model="yourResumeData.workExperience[1].jobTitle" placeholder="ex:Web desinger">
                             </div>
                             <div class="col-lg-4">
-                                <label for="company" class="form-label">Company Name</label>
-                                <input type="text" class="form-control" ng-model="yourResumeData.workExperience[1].companyName" placeholder="ex:Zoho">
+                                <label for="workEx2CompanyName" class="form-label">Company Name</label>
+                                <input type="text" name="workEx2CompanyName" class="form-control" ng-model="yourResumeData.workExperience[1].companyName" placeholder="ex:Zoho">
                             </div>
                         </div>
-                        <div class="row mt-4">
+                        <div class="row mt-4 gap1">
                             <div class="col-lg-2">
-                                <label for="" class="form-label">Country</label>
-                                <input type="text" class="form-control" ng-model="yourResumeData.workExperience[1].workCountry" placeholder="ex:India">
+                                <label for="workEx2country" class="form-label">Country</label>
+                                <input type="text" name="workEx2country" class="form-control" ng-model="yourResumeData.workExperience[1].workCountry" placeholder="ex:India">
                             </div>
                             <div class="col-lg-2">
-                                <label for="" class="form-label">State</label>
-                                <input type="text" class="form-control" ng-model="yourResumeData.workExperience[1].workState" placeholder="ex:Tamil Nadu">
+                                <label for="workEx2state" class="form-label">State</label>
+                                <input type="text" name="workEx2state" class="form-control" ng-model="yourResumeData.workExperience[1].workState" placeholder="ex:Tamil Nadu">
                             </div>
                             <div class="col-lg-3">
-                                <label for="" class="form-label">City</label>
-                                <input type="text" class="form-control" ng-model="yourResumeData.workExperience[1].workCity" placeholder="ex:Chennai">
+                                <label for="workEx2city" class="form-label">City</label>
+                                <input type="text" name="workEx2city" class="form-control" ng-model="yourResumeData.workExperience[1].workCity" placeholder="ex:Chennai">
                             </div>
                         </div>
-                        <div class="row mt-4">
+                        <div class="row mt-4 gap1">
                             <div class="col-lg-2" >
-                                <label for="text" class="form-label">Start Date</label>
-                                <input type="text" class="form-control" maxlength="11" ng-model="yourResumeData.workExperience[1].workStart" >
+                                <label for="workEx2Stdate" class="form-label">Start Date</label>
+                                <input type="text" name="workEx2Stdate" class="form-control" maxlength="11" ng-model="yourResumeData.workExperience[1].workStart" placeholder="ex:01-05-2019">
                             </div>
                             <div class="col-lg-2" >
-                                <label for="text" class="form-label">End Date</label>
-                                <input type="text" class="form-control" maxlength="11" ng-model="yourResumeData.workExperience[1].workEnd" >
+                                <label for="workEx2Endate" class="form-label">End Date</label>
+                                <input type="text" name="workEx2Endate" class="form-control" maxlength="11" ng-model="yourResumeData.workExperience[1].workEnd" placeholder="ex:01-05-2022">
         
                                 <!-- <div class="form-check form-check-inline mt-2">
                                     <input type="checkbox" class="form-check-input" ng-model="currentlyWorkHere">
@@ -257,10 +257,10 @@
                                 </div> -->
                             </div>
                         </div>
-                        <div class="form-check form-check-inline mt-2">
+                        <!-- <div class="form-check form-check-inline mt-2">
                             <input type="checkbox" class="form-check-input" ng-model="moreWorkEx3">
                             <label for="" class="form-check-label">Add more Working Experience</label>
-                        </div>
+                        </div> -->
                     </div>
                     <!--Skills-->
                     <div class="row mt-5">
@@ -268,7 +268,7 @@
                         <div class="row">
                             <div class="col-lg-5 d-inline">
                                 <label for="skills" class="form-label">Enter Your Skills</label>
-                                <textarea type="text" class="form-control"
+                                <textarea type="text" name="skills" class="form-control"
                                  ng-model="yourResumeData.skills[0]" placeholder="HTML,CSS,JS" required>
                                 </textarea>                  
                                 <!-- <button class="btn btn-success mt-1" ng-click="addSkills();">Add Skills</button> -->
@@ -278,16 +278,15 @@
                     <!--Certifications-->
                     <div class="row mt-5">
                         <h2 class="mb-3">Your Certifications:</h2>
-                        <div class="row">
+                        <div class="row gap1">
                             <div class="col-lg-4">
-                                <label for="" class="form-label">Certification Name</label>
-                                <input type="text" class="form-control" ng-model="yourResumeData.certification.certificationName" placeholder="English Junior Typeist">
+                                <label for="certificationName" class="form-label">Certification Name</label>
+                                <input type="text" name="certificationName" class="form-control" ng-model="yourResumeData.certification.certificationName" placeholder="English Junior Typeist">
                             </div>
                             <div class="col-lg-3">
-                                <label for="" class="form-label">About certification</label>
-                                <textarea class="form-control" rows="2" cols="3" ng-model="yourResumeData.certification.certificationAbout" placeholder="FirstClass"></textarea>
+                                <label for="aboutCertification" class="form-label">About certification</label>
+                                <textarea class="form-control" name="aboutCertification" rows="2" cols="3" ng-model="yourResumeData.certification.certificationAbout" placeholder="FirstClass"></textarea>
                             </div>
-        
                         </div>
                     </div>
                     <!--Projects-->
@@ -356,7 +355,7 @@
     <!--Download & Preview Resume-->
     
     <section class="mt-4 template1" id="resumeSection">
-        <div class="container border_g" >
+        <div class="container border_g p-5" >
             <div class="row mt-4 ml-4" ng-show="yourResumeData.personalInfo">
                 <div class="row align-items-center">
                     <div class="col-lg-10">
@@ -413,43 +412,51 @@
                 </div>
             </div>
 
-            <div class="row mt-3" ng-show="yourResumeData.workExperience[0]">
-                <h5 class="resume-Subheading">EXPERIENCE</h5>
-                <div class="d-flex">
-                    <p><span>*</span>{{yourResumeData.workExperience[0].jobTitle}}&nbsp;</p>
-                    <p>{{yourResumeData.workExperience[0].workCity}},</p>
-                    <p>{{yourResumeData.workExperience[0].workState}}</p>
-                </div>
-                <div class="d-flex">
-                    <p>&nbsp;{{yourResumeData.workExperience[0].companyName}}&nbsp;&nbsp;</p>
-                    <p>{{yourResumeData.workExperience[0].workStart}}-</p>
-                    <p>{{yourResumeData.workExperience[0].workEnd}}</p>
-                </div>
-
-                <div class="d-flex">
-                    <p><span>*</span>{{yourResumeData.workExperience[1].jobTitle}}&nbsp;</p>
-                    <p>{{yourResumeData.workExperience[1].workCity}},</p>
-                    <p>{{yourResumeData.workExperience[1].workState}}</p>
-                </div>
-                <div class="d-flex">
-                    <p>&nbsp;{{yourResumeData.workExperience[1].companyName}}&nbsp;</p>
-                    <p>{{yourResumeData.workExperience[1].workStart}}-</p>
-                    <p>{{yourResumeData.workExperience[1].workEnd}}</p>
-                </div>
-            </div>
-
             <div class="row mt-3" ng-show="yourResumeData.education">
                 <h5 class="resume-Subheading">EDUCATION</h5>
                 <div class="d-flex">
-                    <p>{{yourResumeData.education.degree}}-</p>
-                    <p>{{yourResumeData.education.collegeLocation}},</p>
-                    
+                    <p class="col">{{yourResumeData.education.degree}}</p>
+                    <p class="col text-end">{{yourResumeData.education.graduationSt}}-{{yourResumeData.education.graduationEnd}}</p>
                 </div>
                 <div class="d-flex">
-                    <p>{{yourResumeData.education.collegeName}}&nbsp;</p>
-                    <p>{{yourResumeData.education.graduationSt}}-</p>
-                    <p>{{yourResumeData.education.graduationEnd}}</p>
+                    <p class="">{{yourResumeData.education.collegeName}}&nbsp;-&nbsp;</p>
+                    <p class="">{{yourResumeData.education.collegeLocation}}</p>
                 </div>
+            </div>
+
+            <div class="row mt-3" ng-show="yourResumeData.workExperience[0]">
+                <h5 class="resume-Subheading">EXPERIENCE</h5>
+                <div class="d-flex flex-column">
+                    <ul>
+                        <li>
+                            <div class="d-flex">
+                                <p>{{yourResumeData.workExperience[0].jobTitle}}&nbsp;-</p>
+                                <p>&nbsp;{{yourResumeData.workExperience[0].companyName}}&nbsp;&nbsp;</p>
+                                <p class="col text-end">{{yourResumeData.workExperience[0].workStart}}-{{yourResumeData.workExperience[0].workEnd}}</p>
+                            </div>
+                            <div class="d-flex">
+                                <p>{{yourResumeData.workExperience[0].workCity}},</p>
+                                <p>{{yourResumeData.workExperience[0].workState}}</p>
+                            </div>
+                        </li>
+    
+                        <li>
+                            <div class="d-flex">
+                                <p>{{yourResumeData.workExperience[1].jobTitle}}&nbsp;-</p>
+                                <p>&nbsp;{{yourResumeData.workExperience[1].companyName}}&nbsp;&nbsp;</p>
+                                <p class="col text-end">{{yourResumeData.workExperience[1].workStart}}-{{yourResumeData.workExperience[1].workEnd}}</p>
+                            </div>
+                            <div class="d-flex">
+                                <p>{{yourResumeData.workExperience[1].workCity}},</p>
+                                <p>{{yourResumeData.workExperience[1].workState}}</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+
             </div>
 
             <div class="row mt-3" ng-show="yourResumeData.skills">
@@ -519,7 +526,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
  
- 
     <script>
         document.getElementById('savePdf').addEventListener('click', function() {
           const element = document.getElementById('resumeSection'); // Replace with the ID of your content element
@@ -548,4 +554,3 @@
       </script>
 </body>
 </html>
-

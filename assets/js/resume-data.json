@@ -11,8 +11,8 @@
     },
     "careerObjective": "Results-driven Web Developer creating cutting-edge websites and web applications. Expertise in HTML, CSS, JavaScript, AngularJS, and other web technologies.",
     "education": {
-      "collegeName": "UDC",
-      "collegeLocation": "Trichy",
+      "collegeName": "Urumu Dhanalakshmi College",
+      "collegeLocation": "Tiruchirappalli, Tamil Nadu 620019",
       "degree": "Bachelor of Computer Application",
       "graduationSt": "2018",
       "graduationEnd": "2021"
@@ -20,7 +20,7 @@
     "workExperience": [
       {
         "jobTitle": "Web App Developer",
-        "companyName": "Dextrasys",
+        "companyName": "Zoho",
         "workCountry": "India",
         "workState": "Tamil Nadu",
         "workCity": "Trichy",
@@ -37,7 +37,7 @@
         "workEnd": "2023"
       }
     ],
-    "skills": ["HTML", "CSS", "JavaScript", "AngularJS"],
+    "skills": ["HTML", "CSS", "JavaScript", "AngularJS","PHP","SQL"],
     "certification": {
       "certificationName": "Web Development Certification",
       "certificationAbout": "2022"

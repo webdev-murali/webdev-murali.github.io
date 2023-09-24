@@ -1,6 +1,6 @@
 *{font-family: 'Poppins', sans-serif;}
 #resumeSection .border_g{border: 2px solid darkgray;}
-#resumeSection p , #resumeSection li{font-size: 25px;}
+#resumeSection p , #resumeSection li{font-size: 20px;}
 #userDetails h2{color:#6c757d;font-weight: bold;}
 .firstName{color:black;font-weight: bold;font-size: 45px;}
 .profession{color:darkgrey;font-weight: bold;}
@@ -13,6 +13,8 @@
 #resumeSection .addressCard .card-body .d-flex {gap:8px;}
 #resumeSection .addressCard .card-body {padding: .5rem !important;}
 #resumeSection .addressCard{border:none !important;}
+
+.gap1{gap: 1.5rem;}
 .help-h1r{
     width: 59rem;
     rotate: 90deg;

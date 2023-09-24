@@ -67,14 +67,18 @@ app.controller("templateCtrl",function ($scope,$http) {
     $scope.yourResumeData = {};
   }
   //get-JSON-Data
-  $http.get('assets/js/resume-data01.json').then(function(response){
-    console.log("Get resume data....");
-    //$scope.yourResumeData = response.data;
-    console.log($scope.yourResumeData);
-  })
-  .catch(function(error){
-    console.log("Error loading...",error);
-  })
+  $scope.getSampleData = function(){
+    $http.get('assets/js/resume-data.json').then(function(response){
+      console.log("Set Sample resume data....");
+      $scope.yourResumeData = response.data;
+      console.log($scope.yourResumeData);
+    })
+    .catch(function(error){
+      console.log("Error loading...",error);
+    });
+  }
+  //$scope.getSampleData();
+
 
   //add skills
   // $scope.addSkills = function(){
