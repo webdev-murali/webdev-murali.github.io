@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Reports📉</title>
+    <!--For SEO-->
+    <link rel="canonical" href="https://web-dev-notes.web.app/"> 
+    <meta name="title" content="Weather reports"> 
+    <meta name="description" content="Get accurate and up-to-date weather reports, forecasts, and conditions for your location and around the world. Stay informed with Your Weather." />
+    <meta name="keywords" content="weather reports, weather forecasts, local weather, global weather, weather conditions, weather updates" />
+    <meta name=”robots” content="index, follow">
+    <meta property="og:title" content="Weather reports"/> 
+    <meta property="og:description" content="Get accurate and up-to-date weather reports, forecasts, and conditions for your location and around the world. Stay informed with Your Weather."> 
+    <meta name="author" content="Murali.R" />
+    <meta property="og:type" content="website"> 
+    <!-- <meta property="og:image" content=""> -->
+    <meta property="og:url" content="https://web-dev-notes.web.app/"> 
+    <meta property="og:site_name" content="Weather reports">
+    <meta name="twitter:title" content="weather reports">
+    <meta name="twitter:description" content="Get accurate and up-to-date weather reports, forecasts, and conditions for your location and around the world. Stay informed with Your Weather."> 
+    <!-- <meta name="twitter:image" content="">  -->
+    <!-- <meta name="twitter:site" content=""> 
+    <meta name="twitter:creator" content=""> -->
+    <!--Bootstrap V5-->
+    <link async href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--Angular js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!---For icons-->
+    <script async src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+    <!--Fontawesome 5 CDN-->
+    <link rel="stylesheet" async href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!--JS-->
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!--External CSS-->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!--Internal CSS-->
+    <style>
+        body{background-color:antiquewhite;font-family: 'Poppins', sans-serif; }
+        /* body{background-color: ghostwhite;background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);} */
+        header .nav-link{font-size: 1.5rem;font-family: 'Kalam', cursive;}
+        header .nav-link:hover{font-weight: bold;text-decoration: underline;}
+        .tempTxt{
+            font-size: 2.5rem;
+            font-weight: bolder;
+        }
+        .cityTxt{
+            font-size: 1.7rem;
+            font-weight: bolder;
+        }
+        .humidityTxt{
+            font-size: 1rem;
+            font-weight: bolder;
+        }
+        .windSpeedTxt{
+            font-size: 1rem;
+            font-weight: bolder;
+        }
+        .weatherCard{
+            border-radius: 50px;
+            background: #e0e0e0;
+            box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
+        }
+    </style>
+</head>
+<body ng-app="webProjectApp" ng-controller="weatherCtrl">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: dimgrey;">
+            <div class="container-fluid">
+                <!-- <a class="navbar-brand" href="#">Logo</a> -->
+                <button class="navbar-toggler" aria-label="toggler-icon" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="index.html" target="_blank">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="resume-builder.html" target="_blank">Resume Builder</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="mychatgpt.html" target="_blank">My ChatGPT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--Today Weather card-->
+    <div class="container-fluid mt-2" ng-init="WeatherUpdates(cityName);">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center text-dark">Weather Reports</h1>
+            </div>
+        </div>
+
+        <div class="row mt-1 justify-content-center">
+            <div class="col-lg-4">
+                <div class="card weatherCard">
+                    <div class="card-body bg-info">
+                        <div class="mb-2">
+                            <input type="text" class="form-control" placeholder="Enter city name" ng-change="WeatherUpdates(cityName)" ng-model="cityName" autofocus>
+                        </div>
+                        <div class="row justify-content-center align-items-center flex-column" style="gap:2px;">
+                          
+                            <div class="col-lg-4">
+                                <img ng-show="weatherData.weather[0].main" src="assets/img/weather/{{weatherData.weather[0].main}}.png" alt="{{weatherData.weather[0].main}}" title="{{weatherData.weather[0].main}}" class="img-fluid">
+                            </div>
+                            <div class="col mt-3">
+                                <p class="card-text text-center text-light font-weight-bold">Weather Condition:&nbsp;{{weatherData.weather[0].main}}</p>
+                            </div>
+                            <div class="col">
+                                <p class="card-text tempTxt text-center text-light">
+                                    {{weatherData.main.temp}}&nbsp;&deg;C
+                                </p>
+                            </div>
+                            <div class="col">
+                                <p class="card-text cityTxt text-center text-light">
+                                    {{weatherData.name}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row mt-4 row justify-content-center align-items-center flex-row" style="gap:35px;">
+                            <!-- <div class="col">&nbsp;</div> -->
+
+                            <div class="col-lg-4">
+                                <div class="d-flex" style="gap:5px;">
+                                    <img src="assets/img/weather/humidity.png" alt="humidity" style="width:40%;">
+                                    <p class="card-text humidityTxt text-light">
+                                        {{weatherData.main.humidity}}&nbsp;%
+                                        humidity
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="d-flex" style="gap:5px;">
+                                    <img src="assets/img/weather/wind.png" alt="wind" style="width:40%;">
+                                    <p class="card-text windSpeedTxt text-light">
+                                        {{weatherData.wind.speed}}&nbsp; km/h
+                                        WindSpeed
+                                    </p>
+                                </div>
+
+                            </div>
+                            <!-- <div class="col">&nbsp;</div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="container footer-con mt-5 mb-5">
+            <div class="row justify-content-start align-items-center">
+                <div class="col-lg-1">
+                    <a href="https://www.instagram.com/webdev_murali/" target="_blank" >
+                        <img src="assets/img/icons/instagram-sm.svg" alt="Instagram" title="Instagram" class="img-fluid">
+                    </a>
+                </div>
+                <div class="col-lg-1">
+                    <a href="https://api.whatsapp.com/send?phone=9514773633&text=Hi..."  target="_blank">
+                        <img src="assets/img/icons/whatsapp-sm.svg" alt="whatsapp" title="whatsapp" class="img-fluid">
+                    </a>
+                </div>
+                <div class="col-lg-1">
+                    <a href="https://www.youtube.com/@RTMurali-Edits"  target="_blank">
+                        <i class="fab fa-2x fa-youtube" style="color:red;" title="youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!---Bootstrap V5 js-->
+    <script async src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+</body>
+</html>
+<!---
+Haze
+Clear
+Cloudy
+Mist
+Rain
+Snow
+Thunderstorm
+Windy
+Sunny
+Overcast
+Foggy
+Sleet
+Tornado
+Hurricane
+Drizzle
+Blizzard
+Dusty
+Partly cloudy
+Showers
+Heatwave
+
+
+-->

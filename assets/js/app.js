@@ -1,9 +1,39 @@
 //create new app
-var app = angular.module("resumeApp",[]);
+var app = angular.module("webProjectApp",[]);
 //create controller 
 app.controller("templateCtrl",function ($scope,$http) {
   //switch-theme
   $scope.themeTxt = "Dark Mode";
+ 
+$scope.exportToWord = function () {
+  console.log("export docx....");
+  const content = document.getElementById('resumeSection').innerHTML;
+  const converted = htmlDocx.asBlob(content);
+  saveAs(converted, 'document.docx');
+}
+
+//docx-2
+$scope.exportToWord2 = function () {
+  const htmlContent = document.getElementById('resumeSection').innerHTML;
+  
+  // Create a temporary textarea element to hold the HTML content
+  const textArea = document.createElement('textarea');
+  textArea.value = htmlContent;
+  document.body.appendChild(textArea);
+
+  // Select and copy the content to the clipboard
+  textArea.select();
+  document.execCommand('copy');
+
+  // Remove the temporary textarea
+  document.body.removeChild(textArea);
+  
+  alert('HTML content copied to clipboard. You can now paste it into Microsoft Word.');
+};
+
+
+
+
 
   $scope.switchTheme = function(){
     console.log($scope.themeTxt);
@@ -77,7 +107,7 @@ app.controller("templateCtrl",function ($scope,$http) {
       console.log("Error loading...",error);
     });
   }
-  //$scope.getSampleData();
+  $scope.getSampleData();
 
 
   //add skills
@@ -96,4 +126,29 @@ app.controller("templateCtrl",function ($scope,$http) {
   // }
 
 });
+
+//weather-app-ctrl
+app.controller('weatherCtrl', function ($scope, $http) {
+  var apiKey,apiUrl;
+  $scope.searchCity = "trichy";
+  console.log($scope.searchCity);
+  $scope.WeatherUpdates = function(cityName) {
+    cityName ? $scope.searchCity = cityName : $scope.searchCity = "trichy";
+    apiKey = '62e255b300bbccaec9d57300eeee1ce4';
+    apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q='+$scope.searchCity+ '&appid=' + apiKey;
+  
+    $http.get(apiUrl)
+    .then(function (response) {
+      // Successful response
+      $scope.weatherData = response.data;
+      console.log($scope.weatherData);
+    })
+    .catch(function (error) {
+      // Error handling
+      console.error('Error fetching weather data:', error);
+    });
+  }
+
+});
+
  
