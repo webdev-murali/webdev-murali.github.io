@@ -112,7 +112,7 @@
                         <div class="row justify-content-center align-items-center flex-column" style="gap:2px;">
                           
                             <div class="col-lg-4">
-                                <img ng-show="weatherData.weather[0].main" src="assets/img/weather/{{weatherData.weather[0].main}}.png" alt="{{weatherData.weather[0].main}}" title="{{weatherData.weather[0].main}}" class="img-fluid">
+                                <img ng-show="weatherData.weather[0].main" src="assets/img/Weather-pic/{{weatherData.weather[0].main}}.png" alt="{{weatherData.weather[0].main}}" title="{{weatherData.weather[0].main}}" class="img-fluid">
                             </div>
                             <div class="col mt-3">
                                 <p class="card-text text-center text-light font-weight-bold">Weather Condition:&nbsp;{{weatherData.weather[0].main}}</p>
@@ -133,7 +133,7 @@
 
                             <div class="col-lg-4">
                                 <div class="d-flex" style="gap:5px;">
-                                    <img src="assets/img/weather/humidity.png" alt="humidity" style="width:40%;">
+                                    <img src="assets/img/Weather-pic/humidity.png" alt="humidity" style="width:40%;">
                                     <p class="card-text humidityTxt text-light">
                                         {{weatherData.main.humidity}}&nbsp;%
                                         humidity
@@ -143,7 +143,7 @@
                             </div>
                             <div class="col-lg-4">
                                 <div class="d-flex" style="gap:5px;">
-                                    <img src="assets/img/weather/wind.png" alt="wind" style="width:40%;">
+                                    <img src="assets/img/Weather-pic/wind.png" alt="wind" style="width:40%;">
                                     <p class="card-text windSpeedTxt text-light">
                                         {{weatherData.wind.speed}}&nbsp; km/h
                                         WindSpeed

@@ -129,15 +129,15 @@ $scope.exportToWord2 = function () {
 
 //weather-app-ctrl
 app.controller('weatherCtrl', function ($scope, $http) {
-  var apiKey,apiUrl;
+  var c,d;
   $scope.searchCity = "trichy";
   console.log($scope.searchCity);
   $scope.WeatherUpdates = function(cityName) {
     cityName ? $scope.searchCity = cityName : $scope.searchCity = "trichy";
-    apiKey = '62e255b300bbccaec9d57300eeee1ce4';
-    apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q='+$scope.searchCity+ '&appid=' + apiKey;
+    c = '62e255b300bbccaec9d57300eeee1ce4';
+    d = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q='+$scope.searchCity+ '&appid=' + c;
   
-    $http.get(apiUrl)
+    $http.get(d)
     .then(function (response) {
       // Successful response
       $scope.weatherData = response.data;
