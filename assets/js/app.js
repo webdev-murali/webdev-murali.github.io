@@ -151,4 +151,31 @@ app.controller('weatherCtrl', function ($scope, $http) {
 
 });
 
+//Youtube thumbnail-app-ctrl
+app.controller('ytCtrl', function ($scope, $http) {
+  $scope.youtubeUrlPattern = /^(https?:\/\/)?(www\.)?(youtube\.com\/(?:[^\/\n\s]+\/\S+\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+  $scope.ytThumbnail = function(url) {
+    console.log(url);
+    //chk-url-format
+    if(url){
+      var d = 'https://www.youtube.com/oembed?format=json&url='+url;
+      $http.get(d)
+      .then(function (response) {
+        // Successful response
+        $scope.ytData = response.data;
+        console.log($scope.ytData);
+      })
+      .catch(function (error) {
+        // Error handling
+        console.error('Error fetching YT data:', error);
+        alert("Youtube Video not found.!");
+      });
+    }else{
+      alert("Invalid Youtube URL !");
+    }
+
+  }
+
+});
+
  
