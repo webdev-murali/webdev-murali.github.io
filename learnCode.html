@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Leet Code Practice </title>
+</head>
+<body>
+<h1>Leet Code</h1>
+<script>
+//2620
+//https://leetcode.com/problems/counter/
+//Given an integer n, return a counter function. This counter function
+//initially returns n and then returns 1 more than the previous value every subsequent time it is called (n, n + 1, n + 2, etc).
+
+/**
+ * @param {number} n
+ * @return {Function} counter
+ */
+var i;
+var cnt =0;
+var output = [];
+var createCounter = function(n) {
+      output[0] = n; 
+console.log(output);
+    for(i=1;i<calles.length;i++){
+        if(calles[i] === 'call'){
+            n = n+1;
+            output[i] = n; 
+console.log(output);
+           
+        }
+    }
+   // return output;
+    return function() {
+        return output;
+    };
+};
+var n = 10;
+var calles = ["call","call","call"];
+ createCounter(n);
+//var  counter = createCounter(n);
+
+/** 
+ * const counter = createCounter(10)
+ * counter() // 10
+ * counter() // 11
+ * counter() // 12
+ */
+
+</script>
+
+
+</body>
+</html>
