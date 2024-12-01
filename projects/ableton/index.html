@@ -37,7 +37,7 @@
     <!-- Google Tag Manager -->
     <!-- Google Fonts Link -->
     <!-- Bootstrap V5 CDN-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"  crossorigin="anonymous" referrerpolicy="no-referrer">
     <!-- Jquery V3 -->
     <!-- FontAwesome V5 CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
@@ -48,27 +48,107 @@
     <script src="assets/js/homePage.js"></script>
     <!-- Internal CSS -->
     <style>
-        body{
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        /* Externl Fonts */
+        @import url('assets/fonts/futura-pt/FuturaCyrillicMedium.ttf');
+        *{
+            box-sizing: border-box;
+        }
+        body {
+            width: 100vw;
+            font-size: 16px;
+            font-family: futura-pt;
+            line-height: 1.5;
+            font-weight: normal;
+            color: #000;
+            background-color: white;
+            overflow-x: hidden;
         }
         /*Reponse view CSS -Start*/
 
         /*Reponse view CSS -End*/
     </style>
 </head>
-<body>
+<body class="m-0 ">
     <!-- Header Start-->
     <header>
-
+        <nav class="navbar navbar-expand-lg  px-4 py-3 border-bottom">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img src="assets/img/ableton-logo.svg" class="img-fluid" alt="ableton-logo" title="ableton-logo">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                Menu <i class="fa fa-down-arrow"></i>
+              </button>
+              <div class="collapse navbar-collapse d-flex" id="navbarSupportedContent">
+                <div class="col">
+                    <ul class="navbar-nav fw-bold fs-5 d-flex flew-row align-items-center align-content-center">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark" target="_blank" title="Live" aria-current="true">Live</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark" target="_blank" title="Push" aria-current="true">Push</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark" target="_blank" title="Note" aria-current="true">Note</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark" target="_blank" title="Link" aria-current="true">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark" target="_blank" title="Live" aria-current="true">Live</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark" target="_blank" title="Live" aria-current="true">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark" target="_blank" title="Live" aria-current="true">Packs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark" target="_blank" title="Live" aria-current="true">Help</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark" target="_blank" title="Live" aria-current="true">More +</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col " style="flex:none;">
+                    <button class="btn btn-default fw-bold text-primary">
+                        Try Live 12 for free
+                    </button>
+                    <button class="btn btn-default fw-bold">
+                        Log in or register
+                    </button>
+                </div>
+              </div>
+            </div>
+        </nav>
     </header>
+    
     <!-- Header End -->
 
     <!-- Page Content Start -->
     <section>
-        <div class="container">
-            <div class="row">
+        <nav class="navbar px-4">
+            <div class="container-fluid">
+                <ul class="navbar-nav d-flex flex-row justify-content-between gap-2">
+                    <li class="nav-item">
+                        <a href="" class="nav-link active text-warning">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link text-dark">Jobs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link text-dark">Apprenticships</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row justify-content-center align-content-center">
                 <div class="col">
-                    <h1>Welcome to my website</h1>
+                    <picture>
+                        <img src="" alt="">
+                    </picture>
                 </div>
             </div>
         </div>
@@ -82,8 +162,7 @@
     <!-- Footer End -->
     <!-- JS Start -->
     <!-- Bootstrap JS and dependencies (Popper and Bootstrap JS) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ=="  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Google Recaptcha V3 -Start-->
     <!-- <script src="https://www.google.com/recaptcha/api.js?render="></script>
     <script>

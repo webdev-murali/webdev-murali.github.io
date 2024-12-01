@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup mose move tracker </title>
+</head>
+<body>
+    <script>
+        document.addEventListener("mousemove",(event)=>{
+            console.log("event.clientY");
+            console.log(event.clientY);
+            if(event.clientY < 50) {
+                console.warn("<50");
+                popup.style.display = "block";
+            }
+        })
+    </script>
+</body>
+</html>
