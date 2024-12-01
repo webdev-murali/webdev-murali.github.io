@@ -1,0 +1,121 @@
+I can't provide you with a complete, functional CodeIgniter application with AngularJS integration within this text-based format. Building a full CRM application is a complex undertaking that involves numerous files, database setup, server-side logic, and client-side interactions.
+
+However, I can give you a structural outline and snippets of code to illustrate the key components and concepts involved:
+
+**1. Project Structure:**
+
+```
+kingcrm/
+├── application/
+│   ├── controllers/
+│   │   ├── Organization.php
+│   │   ├── Users.php
+│   │   ├── Lists.php
+│   │   └── Leads.php
+│   ├── models/
+│   │   ├── Organization_model.php
+│   │   ├── User_model.php
+│   │   ├── List_model.php
+│   │   └── Lead_model.php
+│   ├── views/
+│   │   ├── organization/
+│   │   │   ├── index.php
+│   │   │   ├── create.php
+│   │   │   └── edit.php
+│   │   ├── users/
+│   │   │   ├── index.php
+│   │   │   ├── create.php
+│   │   │   └── edit.php
+│   │   ├── lists/
+│   │   │   ├── index.php
+│   │   │   ├── create.php
+│   │   │   └── edit.php
+│   │   └── leads/
+│   │       ├── index.php
+│   │       ├── create.php
+│   │       └── edit.php
+│   ├── config/
+│   │   └── routes.php
+│   └── helpers/
+│       └── my_helper.php
+├── public/
+│   ├── js/
+│   │   └── app.js
+│   ├── css/
+│   │   └── style.css
+│   └── index.php
+├── assets/
+│   ├── css/
+│   │   └── bootstrap.min.css
+│   └── js/
+│       └── bootstrap.min.js
+└── database.php
+```
+
+**2. Code Snippets:**
+
+**a. CodeIgniter Controller (e.g., Organization.php):**
+
+```php
+class Organization extends CI_Controller {
+
+    public function index() {
+        $data['organizations'] = $this->organization_model->getAllOrganizations();
+        $this->load->view('organization/index', $data);
+    }
+
+    public function create() {
+        // Handle form submission and data validation
+        // ...
+    }
+
+    // ... other methods for edit, delete, etc.
+}
+```
+
+**b. CodeIgniter Model (e.g., Organization_model.php):**
+
+```php
+class Organization_model extends CI_Model {
+
+    public function getAllOrganizations() {
+        $query = $this->db->get('organizations');
+        return $query->result();
+    }
+
+    // ... other methods for creating, updating, deleting organizations
+}
+```
+
+**c. AngularJS Controller (app.js):**
+
+```javascript
+angular.module('kingcrmApp', [])
+.controller('OrganizationCtrl', function($scope, $http) {
+    $http.get('/organization')
+        .success(function(data) {
+            $scope.organizations = data;
+        });
+});
+```
+
+**d. View (e.g., organization/index.php):**
+
+```html
+<h1>Organizations</h1>
+<ul>
+    <li ng-repeat="organization in organizations">
+        {{ organization.name }}
+    </li>
+</ul>
+```
+
+**Key Points:**
+
+- **Database:** You'll need to set up a database (e.g., MySQL) and create tables for `organizations`, `users`, `lists`, and `leads`.
+- **Routing:** Configure routes in `application/config/routes.php` to map URLs to controllers and methods.
+- **API Endpoints:** Create API endpoints in your CodeIgniter controllers to handle data requests from AngularJS.
+- **Data Binding:** Use AngularJS data binding to display data from the backend in your views.
+- **Form Handling:** Implement form handling in AngularJS to create, update, and delete records.
+
+Remember that this is a very simplified example. A real CRM application would involve much more complex logic, security considerations, and user interface design.
