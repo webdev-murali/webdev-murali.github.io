@@ -3,18 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Popup mose move tracker </title>
+    <title>Mouse Move Tracker</title>
+    <style>
+        #popup {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            border-radius: 8px;
+            z-index: 1000;
+        }
+    </style>
 </head>
 <body>
+
+    
+    <div class="" popover id="popup1">
+        <div class="popup_title">
+            title
+        </div>
+        <div class="popup_body">
+            popup body
+        </div>
+        <div class="popup_footer">
+            footer
+        </div>
+    </div>
+
+    <button popovertarget="popup1">Click me!</button>
+
+   <p>Click the button and it will toggle between showing and hiding the popover element.</p>
+
+
+
+
+
+   <!-- ======== -->
     <script>
-        document.addEventListener("mousemove",(event)=>{
-            console.log("event.clientY");
-            console.log(event.clientY);
-            if(event.clientY < 50) {
-                console.warn("<50");
-                popup.style.display = "block";
+        const popup = document.getElementById('popup1');
+
+        document.addEventListener("mousemove", (event) => {
+            console.log(`Mouse Y position: ${event.clientY}`);
+            if (event.clientY < 50) {
+                console.warn("Mouse is near the top (<50)");
+                //popup.style.display = "block";
+            } else {
+                //  popup.style.display = "none";
             }
-        })
+        });
     </script>
+
 </body>
 </html>
