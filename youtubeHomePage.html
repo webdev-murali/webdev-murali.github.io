@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Home</title>
+    <!--Fonts-->
+
+    <!--Fontawesome V6-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--BootstapV5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+       .lightGray{background-color: rgba(0,0,0,0.05);}
+       .txt-black1{color:#0f0f0f;font-weight: 500;}
+        body{
+            margin:10px;
+        }
+        .searchBtn{
+            height:38px;border-radius:0px 40px 40px 0px;background-color: #f8f8f8;border: 1px solid #d3d3d3;
+            cursor: pointer;
+        }
+        .sidebar-col{
+            
+           
+        }
+        .sidebar-col .active{
+            background-color: lightgray;
+            border-radius: 10px;
+        }
+        .sidebar-div{
+            height: 32rem;
+            width: 18%;
+            overflow: auto;
+            
+        }
+        .br-red{border:2px solid red;}.br-green{border:2px solid green;}
+    </style>
+</head>
+<body>
+    <!--Con-1-->
+    <div class="container-fluid">
+        <div class="row align-items-center justify-content-center m-auto">
+            <div class="d-flex align-items-center justify-content-around flex-row">
+                <div class="col-lg-2">
+                    <div class="d-flex align-items-center gap-2">
+                        <span><i class="fa-solid fa-bars"></i></span>
+                        <span><img src="img/youtube-icon.png" alt="Youtube" title="Youtube"></span>
+                    </div>
+                </div>
+                <div class="col-lg-2">&nbsp;</div>
+                <div class="col-lg-4">
+                    <div class="">
+                        <span class="">
+                            <form action="" method="post">
+                                <input type="search" class="form-control" style="border-radius:40px 0 0 40px;" placeholder="Search">
+                            </form>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-lg-1">
+                    <span class="searchBtn btn m-auto"><i class="fa-solid fa-magnifying-glass"></i></span>
+                </div>
+                <div class="col-lg-2">&nbsp;</div>
+                <div class="col-lg-1">
+                    <div class="d-flex align-items-end gap-3 justify-content-end">
+                        <span><i class="fa-solid fa-video fa-1x"></i></span>
+                        <span><i class="fa-regular fa-bell"></i></span>
+                        <span class="profileIcon">
+                            <img src="img/yt-profile.jpg" alt="" width="32" height="32" class="rounded-circle">
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Con-2-->
+    <div class="container-fluid mt-3">
+        <div class="row flex-row">
+            <!--SideBar Menus-->
+            <div class="sidebar-div col-lg-2" >
+                <div class="col sidebar-col">
+                    <div class="d-flex btn active align-items-center gap-4 justify-conter-between">
+                        <span><i class="fa-solid fa-house"></i></span>
+                        <span>Home</span>
+                    </div>
+                </div>
+                <div class="col sidebar-col">
+                    <div class="d-flex btn">
+                        <span></span>
+                        <span>Shorts</span>
+                    </div>
+                </div>
+                <div class="col sidebar-col">
+                    <div class="d-flex btn">
+                        <span></span>
+                        <span>Subscriptions</span>
+                    </div>
+                </div>
+                <hr>
+                <h6>You</h6>
+                <div class="col sidebar-col">
+                    <div class="d-flex btn">
+                        <span></span>
+                        <span>Your channal</span>
+                    </div>
+                </div>
+                <div class="col sidebar-col">
+                    <div class="d-flex btn">
+                        <span></span>
+                        <span>History</span>
+                    </div>
+                </div>
+                <div class="col sidebar-col">
+                    <div class="d-flex btn">
+                        <span></span>
+                        <span>Your vidoes</span>
+                    </div>
+                </div>
+                <div class="col sidebar-col">
+                    <div class="d-flex btn">
+                        <span></span>
+                        <span>Watch Later</span>
+                    </div>
+                </div>
+                <div class="col sidebar-col">
+                    <div class="d-flex btn">
+                        <span></span>
+                        <span>Show more</span>
+                    </div>
+                </div>
+                <hr>
+                <h6>Subscriptions</h6>
+                <div class="col sidebar-col">
+                    <div class="d-flex btn gap-2 align-items-center">
+                        <span><img src="img/yt-profile.jpg" alt="" class="img-fluid rounded-circle" width="36" height="36"></span>
+                        <span>Website Learners</span>
+                        <span class="active-dot">.</span>
+                    </div>
+                </div>
+                <div class="col sidebar-col">
+                    <div class="d-flex btn gap-2 align-items-center">
+                        <span><img src="img/yt-profile.jpg" alt="" class="img-fluid rounded-circle" width="36" height="36"></span>
+                        <span>Website Learners</span>
+                        <span class="active-dot">.</span>
+                    </div>
+                </div>
+
+            </div>
+            <!--Video Category row-->
+            <div class="col">
+                <div class="d-flex flex-row gap-2">
+                    <span class="text-light bg-dark btn">All</span>
+                    <span class="txt-black1 lightGray btn">Editing</span>
+                    <span class="txt-black1 lightGray btn">Website</span>
+                    <span class="txt-black1 lightGray btn">Gaming</span>
+                    <span class="txt-black1 lightGray btn">Computer Science</span>
+                    <span class="txt-black1 lightGray btn">Music</span>
+                    <span class="txt-black1 lightGray btn">Trailers</span>
+                    <span class="txt-black1 lightGray btn">Tamil Cinema</span>
+                    <span class="txt-black1 lightGray btn">Sketch Comedy</span>
+                    <span class="txt-black1 lightGray btn">News</span>
+                    <span class="txt-black1 lightGray btn">Live</span>
+                </div>
+                <!--Videos Cards-->
+                <br>
+                <div class="row flex-row">
+                    <!--Card-01-->
+                    <div class="col-lg-4">
+                        <span>
+                            <img src="https://placehold.co/480x360.png" alt="" class="img-fluid">
+                        </span>
+                        <span class="d-flex flex-row my-3 gap-2 align-items-center">
+                            <div class="">
+                                <span><img src="img/yt-profile.jpg" alt="" width="36" height="36" class="rounded-circle"></span>
+                            </div>
+                            <div class="">
+                                <span class="fw-bold">How to Make 3D Animation MOVIE <br> With AI</span><br>
+                                <span>Website Learners &nbsp; </span><br>
+                                <span>149K views . 3 weeks ago</span>
+                            </div>
+                        </span>
+                    </div>
+                    <!--Card-03-->
+                    <div class="col-lg-4">
+                        <span><img src="https://placehold.co/480x360.png" alt="" class="img-fluid"></span>
+                        <span class="d-flex flex-row my-3 gap-2 align-items-center">
+                            <div class="">
+                                <span><img src="img/yt-profile.jpg" alt="" width="36" height="36" class="rounded-circle"></span>
+                            </div>
+                            <div class="">
+                                <span class="fw-bold">How to Make 3D Animation MOVIE <br> With AI</span><br>
+                                <span>Website Learners &nbsp; </span><br>
+                                <span>149K views . 3 weeks ago</span>
+                            </div>
+                        </span>
+                    </div>
+                    <!--Card-03-->
+                    <div class="col-lg-4">
+                        <span><img src="https://placehold.co/480x360.png" alt="" class="img-fluid"></span>
+                        <span class="d-flex flex-row my-3 gap-2 align-items-center">
+                            <div class="">
+                                <span><img src="img/yt-profile.jpg" alt="" width="36" height="36" class="rounded-circle"></span>
+                            </div>
+                            <div class="">
+                                <span class="fw-bold">How to Make 3D Animation MOVIE <br> With AI</span><br>
+                                <span>Website Learners &nbsp; </span><br>
+                                <span>149K views . 3 weeks ago</span>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <br>
+                <div class="row flex-row">
+                    <!--Card-01-->
+                    <div class="col-lg-4">
+                        <span>
+                            <img src="https://placehold.co/480x360.png" alt="" class="img-fluid">
+                        </span>
+                        <span class="d-flex flex-row my-3 gap-2 align-items-center">
+                            <div class="">
+                                <span><img src="img/yt-profile.jpg" alt="" width="36" height="36" class="rounded-circle"></span>
+                            </div>
+                            <div class="">
+                                <span class="fw-bold">How to Make 3D Animation MOVIE <br> With AI</span><br>
+                                <span>Website Learners &nbsp; </span><br>
+                                <span>149K views . 3 weeks ago</span>
+                            </div>
+                        </span>
+                    </div>
+                    <!--Card-03-->
+                    <div class="col-lg-4">
+                        <span><img src="https://placehold.co/480x360.png" alt="" class="img-fluid"></span>
+                        <span class="d-flex flex-row my-3 gap-2 align-items-center">
+                            <div class="">
+                                <span><img src="img/yt-profile.jpg" alt="" width="36" height="36" class="rounded-circle"></span>
+                            </div>
+                            <div class="">
+                                <span class="fw-bold">How to Make 3D Animation MOVIE <br> With AI</span><br>
+                                <span>Website Learners &nbsp; </span><br>
+                                <span>149K views . 3 weeks ago</span>
+                            </div>
+                        </span>
+                    </div>
+                    <!--Card-03-->
+                    <div class="col-lg-4">
+                        <span><img src="https://placehold.co/480x360.png" alt="" class="img-fluid"></span>
+                        <span class="d-flex flex-row my-3 gap-2 align-items-center">
+                            <div class="">
+                                <span><img src="img/yt-profile.jpg" alt="" width="36" height="36" class="rounded-circle"></span>
+                            </div>
+                            <div class="">
+                                <span class="fw-bold">How to Make 3D Animation MOVIE <br> With AI</span><br>
+                                <span>Website Learners &nbsp; </span><br>
+                                <span>149K views . 3 weeks ago</span>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
