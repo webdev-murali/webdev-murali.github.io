@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login Cache</title>
+    <!-- Google Hosted CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+
+    <div ng-controller="AuthController">
+        <h2>User Login</h2>
+        <input type="email" ng-model="user.email" placeholder="Email">
+        <input type="password" ng-model="user.password" placeholder="Password">
+        <button ng-click="login()">Login</button>
+        
+        <h3>Cached User Info</h3>
+        <p>{{ cachedUser | json }}</p>
+        
+        <button ng-click="logout()">Logout</button>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+
+        app.factory('CacheService', function($cacheFactory) {
+            var cache = $cacheFactory('authCache');
+
+            return {
+                createCache: function(key, value) {
+                    cache.put(key, value);
+                },
+                getCache: function(key) {
+                    return cache.get(key);
+                },
+                updateCache: function(key, value) {
+                    cache.put(key, value);
+                },
+                deleteCache: function(key) {
+                    cache.remove(key);
+                },
+                clearAllCache: function() {
+                    cache.removeAll();
+                }
+            };
+        });
+
+        app.controller('AuthController', function($scope, CacheService) {
+            $scope.user = { email: "", password: "" };
+            $scope.cachedUser = CacheService.getCache('user') || "No user logged in";
+
+            $scope.login = function() {
+                if ($scope.user.email && $scope.user.password) {
+                    var userData = {
+                        email: $scope.user.email,
+                        token: "abcdef123456", // Mock token
+                        role: "admin", // Mock role
+                        modified: new Date().toISOString()
+                    };
+                    CacheService.createCache('user', userData);
+                    $scope.cachedUser = userData;
+                } else {
+                    alert("Enter email and password");
+                }
+            };
+
+            $scope.logout = function() {
+                CacheService.clearAllCache();
+                $scope.cachedUser = "No user logged in";
+            };
+        });
+
+    </script>
+</body>
+</html>
