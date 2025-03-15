@@ -43,6 +43,8 @@
     </style>
 </head>
 <body ng-app="whatsapp">
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'time-out': 4000}"></toaster-container>
+
     <!-- header -->
     <header>
         <nav class="navbar navbar-expand-sm bg-light navbar-light ">
@@ -78,13 +80,13 @@
                             <label for="" class="form-label">
                                 Enter Whatsapp Number 
                             </label>
-                            <input type="number" placeholder="Enter Phone Number" ng-model="mobileNumber" class="form-control" maxlength="20" minlength="5" inputmode="numeric">
+                            <input type="number" placeholder="Enter Phone Number" id="mobileNumber" ng-model="mobileNumber" class="form-control" maxlength="20" minlength="5" inputmode="numeric">
                         </div>
                         <div class="form-group col">
                             <label for="" class="form-label">
                                 Add your custom Message
                             </label>
-                            <textarea name="customMessage" ng-model="customMessage" id="" class="form-control" placeholder="Hi" inputmode="">Hi </textarea>
+                            <textarea name="customMessage" ng-model="customMessage" id="customMessage" class="form-control" placeholder="Hi" inputmode="">Hi </textarea>
                         </div>
                         <div class="form-group col">
                             <label for="" class="form-label">Generated link will be shown here</label>
@@ -103,8 +105,8 @@
     </div>
     <!-- JS -->
      <script>
-        var app = angular.module('whatsapp',[]);
-        app.controller('whatsappCtrl',function($scope,$timeout){
+        var app = angular.module('whatsapp',['toaster']);
+        app.controller('whatsappCtrl',function($scope,$timeout,toaster){
             $scope.mobileNumber = "";
             $scope.customMessage = "Hi";
             $scope.copyStatus = "Clink here to copy";
@@ -117,11 +119,21 @@
             $scope.copyToClipboard = function() {
                 
                 var copyText = document.getElementById("whatsappLink");
-                
-                if($scope.mobileNumber && $scope.customMessage != ''){
+                var mobileNumber = document.getElementById("mobileNumber");
+                var customMessage = document.getElementById("customMessage");
+                //mobile number
+                console.log(mobileNumber.value);
+                console.log(customMessage);
+                if($scope.mobileNumber == null || $scope.mobileNumber == undefined || !$scope.mobileNumber){
+                    mobileNumber.focus();
+                    toaster.pop('error', "Error!", "Please Enter Valid Mobile Number");
+                }else if($scope.customMessage == '' || $scope.customMessage == null){
+                    customMessage.focus();
+                    toaster.pop('error', "Error!", "Please Enter Custom Message");
+                }else{
                     copyText.select();
                     navigator.clipboard.writeText(copyText.value).then(function() {
-                        //alert("Link copied: " + copyText.value);
+                        toaster.pop('success', "Success!", "Link Copied Successfully.");
                         $scope.copyStatus = "Copied..";
                         $timeout(function(){
                             $scope.copyStatus = "Clink here to copy";
@@ -130,9 +142,8 @@
                         console.error("Failed to copy: ", err);
                         alert("Copy link failed.");
                     });
-                }else{
-                    alert("Please Valid Mobile Number / Custom Message");
                 }
+            
             };
         });
      </script>
