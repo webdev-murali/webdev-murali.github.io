@@ -1,120 +1,211 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Web Dev Notes</title>
-    <!--For SEO-->
-    <link rel="canonical" href="https://web-dev-notes.web.app/">
-    <meta name="title" content="Web Developer Notes">
-    <meta name="description" content="web dev notes -website createing for web developer,which tools use to improve our website or webapp,Free web hosting Platforms,Firebase Hosting,How to use Google Products?,Developer FAQ">
-    <meta name="keywords" content="Web Developer Notes,Developer Notes,Website Design,Front End Developer, free Resume Builder,create Resume online,Resume, ChatGPT,AI">
-    <meta name=”robots” content="index, follow">
-    <meta property="og:title" content="Web Developer Notes"/>
-    <meta property="og:description" content="web dev notes -website createing for web developer,which tools use to improve our website or webapp,Free web hosting Platforms,Firebase Hosting,How to use Google Products?,Developer FAQ">
+    <meta name="theme-color" content="#faf7f0">
+    <title>Murali R — Web Developer &amp; Freelancer</title>
+    <meta name="description" content="I'm Murali R, a web developer and part-time freelancer from Trichy. See my projects, what I'm learning, and the Tamil stories I make with AI.">
+    <meta property="og:title" content="Murali R — Web Developer &amp; Freelancer">
+    <meta property="og:description" content="Hi, I’m Murali! I build websites, learn new skills, and make Tamil stories with AI.">
     <meta property="og:type" content="website">
-    <!-- <meta property="og:image" content=""> -->
-    <meta property="og:url" content="https://web-dev-notes.web.app/">
-    <meta property="og:site_name" content="web dev notes">
-    <meta name="twitter:title" content="Web Developer Notes">
-    <meta name="twitter:description" content="web dev notes -website createing for web developer,which tools use to improve our website or webapp,Free web hosting Platforms,Firebase Hosting,How to use Google Products?,Developer FAQ">
-    <!-- <meta name="twitter:image" content="">  -->
-    <!-- <meta name="twitter:site" content="">
-    <meta name="twitter:creator" content=""> -->
-    <!--Bootstrap V5-->
-    <link async href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!--Angular js-->
-    <script async src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <!--Google Fonts-->
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" type="image/svg+xml" href="assets/img/portfolio/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link asyc href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400&display=swap" rel="stylesheet">
-    <!---For icons-->
-    <script async src="https://cdn.lordicon.com/bhenfmcm.js"></script>
-    <!--Fontawesome 5 CDN-->
-    <link rel="stylesheet" async href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!--JS-->
-    <script src="assets/js/shared/browser-shortcuts.js"></script>
-    <!--External CSS-->
-    <link rel="stylesheet" href="assets/css/shared/base.css">
-    <!--Internal CSS-->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/pages/index.css">
+    <link rel="stylesheet" href="assets/css/pages/companion.css">
+    <script src="assets/js/pages/portfolio.js" defer></script>
+    <script src="assets/js/pages/companion.js" defer></script>
 </head>
 <body>
-    <!--Header-->
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: dimgrey;">
-            <div class="container-fluid">
-                <!-- <a class="navbar-brand" href="#">Logo</a> -->
-                <button class="navbar-toggler" aria-label="toggler-icon" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link text-light text-underline" href="projects/resume-builder.html" target="_blank">Resume Builder</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light text-underline" href="projects/mychatgpt.html" target="_blank">My ChatGPT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light text-underline" href="projects/weather-reports.html" target="_blank">Weather App</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light text-underline" href="projects/youtube-thumbnail-downloader.html" target="_blank">Youtube Thumbnail Downloader</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light text-underline" href="projects/whatsapp-link-generator.html" target="_blank">Whatsapp Link Generator</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="reading-progress" aria-hidden="true"></div>
+        <div class="container header-inner">
+            <a class="brand" href="#home" aria-label="Murali R home">murali<span class="brand-dot">.</span><span class="brand-mark" aria-hidden="true">&lt;/&gt;</span></a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" hidden><span class="menu-label">Menu</span><span class="menu-icon" aria-hidden="true"></span></button>
+            <nav id="site-menu" aria-label="Main navigation">
+                <a href="#about">About</a>
+                <a href="#work">Projects</a>
+                <a href="#learning">Learning</a>
+                <a class="nav-contact" href="#contact">Say hello <span aria-hidden="true">↗</span></a>
+            </nav>
+        </div>
     </header>
-
-    <section id="home-sec">
-        <div class="container d-flex justify-content-center mt-5" id="home-con">
-            <div class="row">
-                <div class="col-lg-8">
-                    <h1 class="head-txt">Web Developer Notes</h1>
+    <main id="main">
+        <section class="hero container" id="home" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> HELLO FROM TRICHY</p>
+                <h1 id="hero-title">Hi, I’m<br><span class="underlined">Murali R.</span> <span class="hello-wave" aria-hidden="true">👋</span></h1>
+                <p class="hero-intro">I build websites and web apps.</p>
+                <p class="hero-role">Web Developer <span aria-hidden="true">&amp;</span> Freelancer</p>
+                <p class="hero-description">I’m a web developer from Trichy. I like building useful tools, trying new ideas, and sharing what I learn. Have a look around!</p>
+                <div class="hero-actions">
+                    <a class="button button-purple" href="#work">See my projects <span aria-hidden="true">↘</span></a>
+                    <a class="text-link" href="#about">About me <span aria-hidden="true">→</span></a>
                 </div>
-                <div class="col-lg-4">
-                    <lord-icon
-                    src="https://cdn.lordicon.com/rfbqeber.json"
-                    trigger="hover"
-                    colors="primary:#ebe6ef,secondary:#646e78,tertiary:#4bb3fd"
-                    style="width:100%;height:100%">
-                    </lord-icon>
+                <p class="hero-note"><span aria-hidden="true">↳</span> Learning new things, one project at a time.</p>
+            </div>
+            <div class="hero-art">
+                <div class="art-orbit" aria-hidden="true"></div>
+                <span class="art-label label-top" aria-hidden="true">Trying out a new idea!</span>
+                <img src="assets/img/portfolio/coding-illustration.svg" width="560" height="480" alt="A playful purple computer with a smiling face, colorful code, and floating creative ideas" fetchpriority="high">
+                <span class="art-label label-bottom" aria-hidden="true"><span>✦</span> Build. Learn. Try again.</span>
+                <span class="art-star" aria-hidden="true">✳</span>
+            </div>
+        </section>
+        <div class="interest-strip" aria-label="My interests">
+            <div class="container strip-inner"><span>WEB DEVELOPMENT</span><b aria-hidden="true">✳</b><span>PERSONAL PROJECTS</span><b aria-hidden="true">✳</b><span>TAMIL STORIES</span><b aria-hidden="true">✳</b><span>ALWAYS LEARNING</span></div>
+        </div>
+
+        <section class="about-section" id="about" aria-labelledby="about-title">
+            <div class="container about-grid">
+                <div class="about-copy"><p class="eyebrow">A LITTLE ABOUT ME</p><h2 id="about-title">I like making<br><span class="serif-accent">useful things.</span></h2><p>I’m Murali, a web developer from Trichy. I enjoy making websites and small tools that help with everyday tasks.</p><p>I work as a Web Application Developer at <strong>Dextrasys Technologies Pvt Ltd</strong>. I also do part-time freelance work on weekends, holidays, and in my free time.</p><p>I also make Tamil stories with AI for my YouTube channel. It’s fun to try something different!</p><span class="location-tag"><span aria-hidden="true">◎</span> Based in Trichy, Tamil Nadu</span></div>
+                <div class="skills-panel"><div class="skills-heading"><h3>Skills I use</h3><span aria-hidden="true">✳</span></div><p>These are the tools I use for my web projects.</p><div class="skill-group"><h4>FRONT END</h4><ul class="skill-list"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>AngularJS</li></ul></div><div class="skill-group"><h4>BACK END</h4><ul class="skill-list"><li>PHP</li><li>MySQL</li><li>CodeIgniter 3</li></ul></div><div class="skill-group"><h4>OTHER TOOLS</h4><ul class="skill-list"><li>Git</li><li>Gemini API integration</li></ul></div><p class="toolkit-note"><span aria-hidden="true">↳</span> Still learning and enjoying it.</p></div>
+            </div>
+        </section>
+
+        <section class="section container" id="work" aria-labelledby="work-title">
+            <div class="section-heading">
+                <div><p class="eyebrow">THINGS I’VE BUILT</p><h2 id="work-title">My <span class="serif-accent">projects.</span></h2></div>
+                <p>Some things I’ve built. Pick a project and try it out.</p>
+            </div>
+            <div class="project-toolbar" hidden>
+                <div class="filters" role="group" aria-label="Filter projects">
+                    <button type="button" class="filter active" data-filter="all" aria-pressed="true">All projects</button>
+                    <button type="button" class="filter" data-filter="tool" aria-pressed="false">Web tools</button>
+                    <button type="button" class="filter" data-filter="experiment" aria-pressed="false">UI practice</button>
+                    <button type="button" class="filter" data-filter="academic" aria-pressed="false">College project</button>
+                </div>
+                <p class="project-count" aria-live="polite" aria-atomic="true">6 projects</p>
+            </div>
+            <div class="project-grid">
+                <article class="project-card" data-category="tool">
+                    <div class="project-preview preview-resume" aria-hidden="true">
+                        <span class="preview-index">01</span><span class="preview-sticker">your resume, made easy ↗</span>
+                        <div class="resume-sheet"><div class="resume-avatar">M</div><div class="resume-lines"><b>MURALI R</b><small>WEB DEVELOPER</small><i></i><i></i><em>EXPERIENCE</em><i></i><i></i><em>EDUCATION</em><i></i></div></div>
+                        <span class="preview-symbol">✳</span>
+                    </div>
+                    <div class="project-content"><p class="project-type">WEB TOOL <span>COMPLETED</span></p><h3><a href="projects/resume-builder.html">Resume Builder <span aria-hidden="true">↗</span></a></h3><p>Add your details, check your resume, and save it as a PDF using the print option.</p><ul class="tags" aria-label="Technologies"><li>AngularJS</li><li>JavaScript</li><li>Bootstrap</li></ul></div>
+                </article>
+                <article class="project-card" data-category="tool">
+                    <div class="project-preview preview-weather" aria-hidden="true"><span class="preview-index">02</span><div class="weather-sun"></div><div class="weather-cloud"></div><div class="weather-demo"><span>TRICHY, INDIA</span><strong>30°</strong><span>A sunny day in Trichy.</span></div><span class="preview-caption">sample preview</span></div>
+                    <div class="project-content"><p class="project-type">WEB TOOL <span>COMPLETED</span></p><h3><a href="projects/weather-reports.html">Weather App <span aria-hidden="true">↗</span></a></h3><p>Search for a city to see its temperature and current weather.</p><ul class="tags" aria-label="Technologies"><li>AngularJS</li><li>OpenWeatherMap API</li></ul></div>
+                </article>
+                <article class="project-card" data-category="tool">
+                    <div class="project-preview preview-youtube" aria-hidden="true"><span class="preview-index">03</span><div class="video-stack stack-back"></div><div class="video-stack stack-front"><span class="play-icon">▶</span><span>PICK A THUMBNAIL</span></div><span class="download-sticker">↓ .jpg</span></div>
+                    <div class="project-content"><p class="project-type">WEB TOOL <span>COMPLETED</span></p><h3><a href="projects/youtube-thumbnail-downloader.html">YouTube Thumbnail Downloader <span aria-hidden="true">↗</span></a></h3><p>Paste a YouTube link to find its thumbnail in different sizes.</p><ul class="tags" aria-label="Technologies"><li>JavaScript</li><li>AngularJS</li><li>YouTube oEmbed</li></ul></div>
+                </article>
+                <article class="project-card" data-category="tool">
+                    <div class="project-preview preview-whatsapp" aria-hidden="true"><span class="preview-index">04</span><div class="bubble bubble-one">Hey, how are you? <span>✦</span></div><div class="bubble bubble-two">Send a quick hello ↗</div><span class="link-doodle">&lt; a little hello /&gt;</span></div>
+                    <div class="project-content"><p class="project-type">WEB TOOL <span>COMPLETED</span></p><h3><a href="projects/whatsapp-link-generator.html">WhatsApp Link Generator <span aria-hidden="true">↗</span></a></h3><p>Enter a phone number and a message to make a WhatsApp link you can share.</p><ul class="tags" aria-label="Technologies"><li>AngularJS</li><li>JavaScript</li><li>Clipboard API</li></ul></div>
+                </article>
+                <article class="project-card" data-category="experiment">
+                    <div class="project-preview preview-ui" aria-hidden="true"><span class="preview-index">05</span><div class="mini-browser"><div class="mini-browser-top">● ● ●</div><div class="mini-search"><b><span>G</span>oogle</b><i>What are you looking for? <span>⌕</span></i></div></div><span class="ui-sticker">made for practice ✦</span></div>
+                    <div class="project-content"><p class="project-type">UI PRACTICE <span>COMPLETED</span></p><h3>UI mockups</h3><p>I rebuilt Google, YouTube, and ChatGPT-style pages to practise HTML and CSS.</p><div class="project-links"><a href="projects/google-home.html">Google <span aria-hidden="true">↗</span></a><a href="projects/youtube-home.html">YouTube <span aria-hidden="true">↗</span></a><a href="projects/mychatgpt.html">ChatGPT-style UI <span aria-hidden="true">↗</span></a></div><ul class="tags" aria-label="Technologies"><li>HTML</li><li>CSS</li></ul></div>
+                </article>
+                <article class="project-card" data-category="academic">
+                    <div class="project-preview preview-nexplay" aria-hidden="true"><span class="preview-index">06</span><div class="nexplay-logo">N<span>▶</span></div><strong class="nexplay-wordmark">NexPlay<span>PLAY. SHARE. CONNECT.</span></strong></div>
+                    <div class="project-content"><p class="project-type">MCA PROJECT <span>ACADEMIC</span></p><h3>NexPlay</h3><p>My MCA college project: an app for playing and sharing videos online.</p><a class="text-link project-detail" href="mailto:webdevmurali01@gmail.com?subject=NexPlay%20project%20enquiry">Ask me about the project <span aria-hidden="true">↗</span></a></div>
+                </article>
+            </div>
+            <article class="private-project">
+                <div class="bot-art" aria-hidden="true"><div class="bot-face"><span>•</span><span>•</span><i></i></div><span class="bot-spark">✦</span><span class="bot-chat">What are you shopping for?</span></div>
+                <div class="private-copy"><p class="eyebrow">MY PRIVATE PROJECT <span class="private-badge">PRIVATE PROJECT</span></p><h3>WhatsApp E-commerce Bot</h3><p>I built a WhatsApp bot using the Gemini API. It answers product questions, shows products, and gives customers a checkout link. This is a private project, so contact me to know more.</p><ul class="tags"><li>WhatsApp</li><li>Gemini API</li><li>E-commerce</li></ul></div>
+                <a class="button button-light" href="mailto:webdevmurali01@gmail.com?subject=WhatsApp%20E-commerce%20Bot%20enquiry">Ask me about it <span aria-hidden="true">↗</span></a>
+            </article>
+        </section>
+
+
+
+        <section class="learning-section" id="learning" aria-labelledby="learning-title">
+            <div class="container">
+                <div class="section-heading">
+                    <div><p class="eyebrow">LEARNING SOMETHING NEW</p><h2 id="learning-title">What I’m <span class="serif-accent">learning.</span></h2></div>
+                    <p>These are the things I’m spending time on now. I’ll share more as I learn!</p>
+                </div>
+                <div class="learning-grid">
+                    <article class="learning-card learning-security">
+                        <div class="learning-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 5 9 11v12c0 10 15 19 15 19s15-9 15-19V11L24 5Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="m17 24 5 5 10-12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        <span class="learning-status">Currently learning</span>
+                        <h3>Web Security</h3>
+                        <p>I’m learning how to find and fix security problems in web apps.</p>
+                        <span class="learning-note">Making safer websites</span>
+                    </article>
+                    <article class="learning-card learning-bugs">
+                        <div class="learning-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><rect x="15" y="16" width="18" height="23" rx="9" stroke="currentColor" stroke-width="2.5"/><path d="M19 16v-3a5 5 0 0 1 10 0v3M24 19v17M8 20l7 4m18 0 7-4M7 30h8m18 0h8M11 41l7-6m12 0 7 6M18 6l3 4m9-4-3 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+                        <span class="learning-status">Currently learning</span>
+                        <h3>Bug Bounty</h3>
+                        <p>I’m learning how bug bounty programs work and how to report bugs clearly.</p>
+                        <span class="learning-note">Finding bugs, learning more</span>
+                    </article>
+                    <article class="learning-card learning-ai">
+                        <div class="learning-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><rect x="9" y="14" width="30" height="27" rx="8" stroke="currentColor" stroke-width="2.5"/><path d="M24 14V8M5 25v7m38-7v7m-26-9v3m14-3v3m-14 7c3 4 11 4 14 0" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="5" r="3" fill="currentColor"/></svg></div>
+                        <span class="learning-status">Currently learning</span>
+                        <h3>Personal AI Agents</h3>
+                        <p>I’m learning to build a personal AI agent that helps with simple, everyday tasks.</p>
+                        <span class="learning-note">A little help with daily work</span>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <div class="container footer-con mt-5">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-1">
-                    <a href="https://www.instagram.com/webdev_murali/" target="_blank" >
-                        <img src="assets/img/icons/instagram-sm.svg" alt="Instagram" width="auto" height="auto" title="Instagram" class="img-fluid">
-                    </a>
-                </div>
-                <div class="col-lg-1">
-                    <a href="https://api.whatsapp.com/send?phone=9514773633&text=Hi..&#128512"  target="_blank">
-                        <img src="assets/img/icons/whatsapp-sm.svg" alt="whatsapp" width="auto" height="auto" title="whatsapp" class="img-fluid">
-                    </a>
-                </div>
-                <div class="col-lg-1">
-                    <a href="https://www.youtube.com/@RTMurali-Edits"  target="_blank">
-                        <i class="fab fa-2x fa-youtube" style="color:red;" title="youtube"></i>
-                    </a>
-                </div>
+        <section class="section container" id="journey" aria-labelledby="journey-title">
+            <div class="section-heading"><div><p class="eyebrow">WORK &amp; EDUCATION</p><h2 id="journey-title">My work &amp; <span class="serif-accent">studies.</span></h2></div><p>Where I work, where I studied, and a few things I did along the way.</p></div>
+            <div class="journey-grid">
+                <div class="experience-column"><h3 class="column-label">WORK EXPERIENCE <span aria-hidden="true">↗</span></h3><article class="journey-card career-card"><span class="date-label">2023 — PRESENT <span class="current-dot" aria-hidden="true"></span></span><h4>Web Application Developer</h4><p class="institution">Dextrasys Technologies Pvt Ltd</p><p>I’ve been working here as a Web Application Developer since 2023.</p></article><article class="journey-card freelance-card"><span class="date-label">PART-TIME / OUTSIDE WORK HOURS</span><h4>Part-time freelancer</h4><p>I take on freelance work in my free time. You can see more on my separate freelance website.</p><a class="text-link" href="https://budgetfriendlyfreelancers.github.io/" target="_blank" rel="noopener noreferrer">Budget Friendly Freelancers <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></article></div>
+                <div class="education-column"><h3 class="column-label">EDUCATION &amp; CERTIFICATION <span aria-hidden="true">✧</span></h3><article class="education-item"><span class="date-label">2023 — 2025</span><h4>Master of Computer Applications</h4><p>Alagappa University · Distance education</p><div class="education-notes"><span class="small-badge">First Class</span><span>Project: NexPlay — online video player &amp; sharing application</span></div></article><article class="education-item"><span class="date-label">2018 — 2021</span><h4>Bachelor of Computer Applications</h4><p>Urmu Dhanalakshmi Arts College, Trichy</p><p class="education-notes">NSS social service and special camp</p></article><article class="education-item certificate-item"><span class="certificate-icon" aria-hidden="true">✹</span><div><span class="date-label">FEBRUARY 2019 / GOVERNMENT CERTIFICATE</span><h4>Junior Grade English Typewriting</h4><p>Completed with First Class</p></div></article></div>
             </div>
-        </div>
-    </footer>
+        </section>
 
-    <!---Bootstrap V5 js-->
-    <script async src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        <section class="container creator-section" id="stories" aria-labelledby="creator-title">
+            <div class="creator-art" aria-hidden="true"><span class="film-kicker">I MAKE TAMIL STORIES TOO!</span><div class="film-frame"><span class="frame-corner top-left"></span><span class="frame-corner bottom-right"></span><span class="film-play">▶</span><span class="tamil-title" lang="ta">ஒரு கதை சொல்லட்டுமா?</span><span class="film-caption">STORIES BY MURALI</span></div><span class="film-spark">✳</span></div>
+            <div class="creator-copy"><p class="eyebrow">MY YOUTUBE CHANNEL</p><h2 id="creator-title">Stories<br><span class="serif-accent">by Murali.</span></h2><p>I make AI-based short films, web series, and Tamil stories on <strong>Stories by Murali</strong>. Come watch a story!</p><div class="creator-tags"><span>AI filmmaking</span><span>Tamil stories</span><span>Web series</span></div><a class="button button-dark" href="https://www.youtube.com/@storiesbymurali" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="assets/img/icons/youtube-sm.svg" width="28" height="28" alt="" aria-hidden="true">Watch on YouTube <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div>
+        </section>
+
+        <section class="contact-section" id="contact" aria-labelledby="contact-title">
+            <div class="container contact-inner"><span class="contact-star" aria-hidden="true">✳</span><p class="eyebrow">LET’S KEEP IN TOUCH</p><h2 id="contact-title">Have a question?<br><span>Say hello!</span></h2><p>Want to talk about a project or just say hi?<br>Send me a message.</p><div class="contact-actions">
+                    <a class="button button-outline" href="https://www.instagram.com/azhagu_raja_01/" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="assets/img/icons/instagram-sm.svg" width="28" height="28" alt="" aria-hidden="true"><span class="contact-label">Instagram<small>@azhagu_raja_01</small></span><span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+                    <a class="button button-dark" href="https://wa.me/919514773633" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="assets/img/icons/whatsapp-sm.svg" width="28" height="28" alt="" aria-hidden="true"><span class="contact-label">WhatsApp<small>+91 9514773633</small></span><span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+                    <a class="button button-outline" href="https://www.linkedin.com/in/murali-rajkumar/" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="assets/img/icons/linkedin-sm.svg" width="28" height="28" alt="" aria-hidden="true"><span class="contact-label">LinkedIn<small>murali-rajkumar</small></span><span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+                </div><a class="email-link" href="mailto:webdevmurali01@gmail.com">webdevmurali01@gmail.com</a><p class="contact-note">For freelance work, I’m available on weekends, holidays, and in my free time.</p></div>
+        </section>
+    </main>
+    <footer class="container site-footer"><a class="brand" href="#home">murali<span class="brand-dot">.</span></a><p>© 2026 Murali R. Thanks for stopping by!</p><div class="footer-links"><a href="https://www.instagram.com/azhagu_raja_01/" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="assets/img/icons/instagram-sm.svg" width="28" height="28" alt="" aria-hidden="true">Instagram <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.linkedin.com/in/murali-rajkumar/" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="assets/img/icons/linkedin-sm.svg" width="28" height="28" alt="" aria-hidden="true">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a><a href="https://budgetfriendlyfreelancers.github.io/" target="_blank" rel="noopener noreferrer">Freelance work <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a><a href="#home" aria-label="Back to top">↑</a></div></footer>
+    <div class="farewell" aria-label="Thanks for visiting">
+        <p class="farewell-copy">Thank you!<span>Ta-ta! See you again.</span></p>
+        <span class="farewell-spark spark-left" aria-hidden="true">✦</span>
+        <span class="farewell-spark spark-right" aria-hidden="true">✳</span>
+        <span class="farewell-spot" aria-hidden="true"></span>
+    </div>
+    <div class="buddy" data-activity="wave" aria-hidden="true" hidden>
+        <svg class="buddy-boy" viewBox="0 0 100 120" width="80" height="96" aria-hidden="true" focusable="false">
+                        <ellipse class="buddy-shadow" cx="50" cy="114" rx="24" ry="4" fill="#655176" opacity=".18"/>
+                        <g class="boy-body">
+                            <g class="boy-leg boy-leg-left"><path d="M38 81v22" stroke="#3d344e" stroke-width="13" stroke-linecap="round"/><path d="M39 103h-9a5 5 0 0 0-5 5v3h20v-8Z" fill="#fffdf7" stroke="#3d344e" stroke-width="2"/><path d="M26 108h17" stroke="#c6b9d9" stroke-width="2"/></g>
+                            <g class="boy-leg boy-leg-right"><path d="M60 81v22" stroke="#3d344e" stroke-width="13" stroke-linecap="round"/><path d="M58 103h9a5 5 0 0 1 5 5v3H52v-8Z" fill="#fffdf7" stroke="#3d344e" stroke-width="2"/><path d="M54 108h17" stroke="#c6b9d9" stroke-width="2"/></g>
+                            <g class="boy-arm boy-arm-left"><path d="m31 58-12 20" stroke="#7854bf" stroke-width="12" stroke-linecap="round"/><circle cx="18" cy="81" r="6" fill="#d99a68" stroke="#623f35" stroke-width="1.5"/></g>
+                            <g class="boy-arm boy-arm-right"><path d="m67 58 12 20" stroke="#7854bf" stroke-width="12" stroke-linecap="round"/><circle cx="81" cy="81" r="6" fill="#d99a68" stroke="#623f35" stroke-width="1.5"/></g>
+                            <path d="M37 49h25l9 12-4 28H31l-4-28Z" fill="#916acb" stroke="#493254" stroke-width="2"/>
+                            <path d="m41 51 8 8 9-8M41 75h16v8H41" stroke="#ccb3ed" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M45 45v9c0 5 10 5 10 0v-9" fill="#d99a68" stroke="#623f35" stroke-width="1.5"/>
+                            <g class="boy-head">
+                                <circle cx="27" cy="32" r="6" fill="#d99a68"/><circle cx="73" cy="32" r="6" fill="#d99a68"/>
+                                <rect x="28" y="12" width="44" height="39" rx="18" fill="#e9af7f" stroke="#623f35" stroke-width="1.5"/>
+                                <path d="M26 29V16C26 3 40 5 43 4c6-1 11-5 16-1l-3 3c12-2 19 4 17 15l-2 10-6-9c-12 3-21-1-26-6l-5 14Z" fill="#46312e"/>
+                                <g class="boy-eyes"><path d="M40 30v4m20-4v4" stroke="#392a2c" stroke-width="3.5" stroke-linecap="round"/></g>
+                                <path d="M44 41q6 6 12 0" stroke="#864737" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                <circle cx="35" cy="39" r="3" fill="#df8f70"/><circle cx="65" cy="39" r="3" fill="#df8f70"/>
+                            </g>
+                            <g class="buddy-prop prop-code"><path d="M28 65h44l-4 24H32Z" fill="#423c51" stroke="#241f30" stroke-width="2"/><path d="m44 73-5 4 5 4m12-8 5 4-5 4" stroke="#d1b9f0" stroke-width="2" fill="none"/><path d="M27 89h46" stroke="#c6b9dc" stroke-width="4" stroke-linecap="round"/></g>
+                            <g class="buddy-prop prop-read"><path d="M24 65q13-4 26 3 13-7 26-3v24q-13-4-26 3-13-7-26-3Z" fill="#f5cb77" stroke="#7a592f" stroke-width="2"/><path d="M50 68v24m-20-19 13 3m-13 3 13 3m14-6 13-3m-13 9 13-3" stroke="#ac7c38" stroke-width="1.5"/></g>
+                            <g class="buddy-prop prop-graduate"><path d="m19 13 31-11 31 11-31 11Z" fill="#453450" stroke="#251c2f" stroke-width="1.5"/><path d="M34 18v9q16 7 32 0v-9" fill="#453450"/><path d="M77 15v18" stroke="#f1c46e" stroke-width="2"/><circle cx="77" cy="34" r="3" fill="#f1c46e"/><rect x="36" y="66" width="29" height="14" rx="4" fill="#fff3d4" stroke="#a57d40" stroke-width="1.5"/><path d="M49 66v14" stroke="#ca6a58" stroke-width="4"/></g>
+                            <g class="buddy-prop prop-film"><rect x="28" y="64" width="39" height="24" rx="5" fill="#494652" stroke="#24202c" stroke-width="2"/><path d="m67 70 13-5v23l-13-5Z" fill="#7b718e" stroke="#24202c" stroke-width="2"/><circle cx="42" cy="58" r="7" fill="#7b718e" stroke="#24202c" stroke-width="2"/><circle cx="57" cy="58" r="7" fill="#7b718e" stroke="#24202c" stroke-width="2"/><circle cx="38" cy="73" r="2.5" fill="#f19c77"/></g>
+                            <g class="buddy-prop prop-contact"><rect x="31" y="65" width="38" height="25" rx="4" fill="#fff2d6" stroke="#ad744c" stroke-width="2"/><path d="m32 67 18 13 18-13" stroke="#ad744c" stroke-width="2" fill="none"/><path d="M47 76c-5-5-10 3 3 9 13-6 8-14 3-9l-3 2Z" fill="#bd6859"/></g>
+                        </g>
+                    </svg>
+    </div>
 </body>
 </html>
