@@ -1,0 +1,21 @@
+.lightGray{background-color: rgba(0,0,0,0.05);}
+       .txt-black1{color:#0f0f0f;font-weight: 500;}
+        body{
+            margin:10px;
+        }
+        .searchBtn{
+            height:38px;border-radius:0px 40px 40px 0px;background-color: #f8f8f8;border: 1px solid #d3d3d3;
+            cursor: pointer;
+        }
+        /* .sidebar-col{} */
+        .sidebar-col .active{
+            background-color: lightgray;
+            border-radius: 10px;
+        }
+        .sidebar-div{
+            height: 32rem;
+            width: 18%;
+            overflow: auto;
+            
+        }
+        .br-red{border:2px solid red;}.br-green{border:2px solid green;}

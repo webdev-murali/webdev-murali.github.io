@@ -1,0 +1,9 @@
+body{background-color: ghostwhite;}
+        header .nav-link{font-size: 1.5rem;}
+        header .nav-link:hover{text-decoration: underline;}
+        header .navbar{box-shadow: 0px 0px 10px #888888 !important;}
+        @media only screen and (max-width: 720px) {
+            #others-img-con h4{
+                font-size: 1rem;
+            }
+        }

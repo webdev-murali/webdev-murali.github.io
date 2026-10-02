@@ -1,0 +1,70 @@
+.letters span{
+            font-size: 7rem;
+            text-align: center;
+        }
+        .letters span:nth-child(1){color: blue;}
+        .letters span:nth-child(2){color: red;}
+        .letters span:nth-child(3){color: orange;}
+        .letters span:nth-child(4){color: blue;}
+        .letters span:nth-child(5){color: green;}
+        .letters span:nth-child(6){color: red;}
+
+        .search_input{
+            height: 3rem;
+            position: relative;
+        }
+        .search_input .search{
+            background-color: #fff;
+            border: none;
+            border-radius: 44px;
+            color: #000000ff;
+            font-family: inherit;
+            font-size: inherit;
+            height: 100%;
+            outline: 0;
+            padding-inline-end: calc(53px + 26px + 8px);
+            padding-inline-start: 52px;
+            position: relative;
+            width: 100%;
+            box-shadow: 0 1px 6px 0 #20212447;
+        }
+        .searchIcon img{
+            position: relative;
+            top: 2.5rem;
+            z-index: 100;
+            left: 1rem;
+        }
+        .voiceIcon{
+            background-image: url('../../img/icon_voice.svg');
+            background-color: transparent;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 21px 21px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            height: 100%;
+            outline: 0;
+            padding: 0;
+            pointer-events: auto;
+            position: absolute;
+            right: 53px;
+            width: 26px;
+        }
+        .imageIcon{
+            background-image: url('../../img/lens_icon.svg');
+            background-color: transparent;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 21px 21px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            height: 100%;
+            outline: 0;
+            padding: 0;
+            pointer-events: auto;
+            position: absolute;
+            right: 16px;
+            width: 26px;
+        }

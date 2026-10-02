@@ -1,0 +1,39 @@
+body{background-color: ghostwhite;}
+        header .nav-link{font-size: 1.5rem;}
+        header .nav-link:hover{text-decoration: underline;}
+        header .navbar{box-shadow: 0px 0px 10px #888888 !important;}
+        @media only screen and (max-width: 720px) {
+            #others-img-con h4{
+                font-size: 1rem;
+            }
+            #others-img-con .row{
+                flex-direction: column;
+                gap:2rem;
+            }
+            /* #how-to-download ul .li_1{
+                display: none !important;
+            }
+            #how-to-download ul .li_2{
+                display: block !important;
+            } */
+        }
+        .red-color{color:red;}
+        .brown-color{color:brown}
+        #steps-row ol{
+            line-height: 2rem;
+            font-size: 1.2rem;
+        }
+        #iframe-row iframe{
+            width: 100% !important;
+            height: 100% !important;
+        }
+        #how-to-download ul{
+            line-height: 2.5rem;
+            font-size: 1.3rem;
+        }
+        /* #how-to-download ul .li_1{
+            display: none !important;
+        }
+        #how-to-download ul .li_2{
+            display: block !important;
+        } */

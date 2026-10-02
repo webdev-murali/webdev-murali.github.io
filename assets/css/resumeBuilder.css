@@ -1,6 +1,0 @@
-@media (max-width: 768px){
-    .saveResetBtn-row{gap:1rem;}
-}
-#templates-sec .card{cursor: pointer;}
-#templates-sec .card:hover{box-shadow: 2px 2px 2px gray;}
-.select-templates {border: 2px solid green;}

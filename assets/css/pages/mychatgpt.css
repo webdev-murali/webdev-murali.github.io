@@ -1,0 +1,10 @@
+#gs_tti50 input
+      {
+        background: none !important;
+      }
+      .gsc-search-button-v2{
+        background-color: #00887a !important;
+      }
+      .table.gsc-search-box td.gsc-input{padding-right: 0 !important;}
+      #gs_id50 tbody tr{border: 2px solid gainsboro;}
+      #gs_tti50 input:focus{box-shadow: none !important;color:black !important}
