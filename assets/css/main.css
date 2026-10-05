@@ -8,7 +8,7 @@
 .footer-ul li{word-spacing: 1rem;}
 /*Mobile*/
 @media (max-width:767px) {
-    .head-txt{font-size:2rem !important;text-align: center !important;}
+    .head-txt{font-size:1.3rem !important;text-align: center !important;}
 }
 
 
